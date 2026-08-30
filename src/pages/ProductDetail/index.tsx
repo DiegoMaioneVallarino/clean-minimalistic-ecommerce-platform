@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom";
 import { products } from "../../services/products";
 import "../../styles/product-detail.css";
 import { useCart } from "../../store/CartContext";
+import { useRef } from "react";
+import { flyToCart } from "../../utils/flyToCart";
+
 
 function ProductDetail() {
 
@@ -11,28 +14,40 @@ function ProductDetail() {
         (product) => product.id === Number(id)
     );
 
+    const productImageRef =
+    useRef<HTMLImageElement>(null);
+
     const { addToCart } = useCart();
 
-    if (!product) {
-        return (
-            <section>
-                <h1>Product not found</h1>
-            </section>
-        );
-    }
+   if (!product) {
+    return (
+        <section>
+            <h1>Product not found</h1>
+        </section>
+    );
+}
 
+    const handleAddToCart = () => {
+        addToCart(product);
+
+        if (productImageRef.current) {
+            flyToCart(productImageRef.current);
+        }
+    };
+    
     return (
         <section className="product-detail">
 
             <div className="product-gallery">
 
-                {product.images.map((image, index) => (
-                    <img
-                        key={image}
-                        src={image}
-                        alt={`${product.name} ${index + 1}`}
-                    />
-                ))}
+               {product.images.map((image, index) => (
+    <img
+        key={image}
+        ref={index === 0 ? productImageRef : null}
+        src={image}
+        alt={`${product.name} ${index + 1}`}
+    />
+))}
 
             </div>
 
@@ -54,9 +69,7 @@ function ProductDetail() {
                     {product.description}
                 </p>
 
-                <button
-               onClick={() => addToCart(product)}
->
+                <button onClick={handleAddToCart}>
     Add to cart
 </button>
 

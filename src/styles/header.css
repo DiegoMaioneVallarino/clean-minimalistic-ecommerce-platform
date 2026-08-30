@@ -21,7 +21,33 @@
     font-weight: 700;
     letter-spacing: 2px;
 }
+.cart-link {
+    position: relative;
+}
 
+.cart-count {
+    position: absolute;
+
+    top: -10px;
+    right: -14px;
+
+    min-width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 5px;
+
+    border-radius: 999px;
+
+    background: black;
+    color: white;
+
+    font-size: 10px;
+    line-height: 1;
+}
 .main-nav {
     display: flex;
     align-items: center;
