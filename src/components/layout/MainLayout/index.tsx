@@ -1,21 +1,16 @@
+import Header from "../Header";
 import { Outlet } from "react-router-dom";
 
 function MainLayout() {
-    return (
-        <>
-            <header>
-                Header
-            </header>
+  return (
+    <>
+      <Header />
 
-            <main>
-                <Outlet />
-            </main>
-
-            <footer>
-                Footer
-            </footer>
-        </>
-    );
+      <main>
+        <Outlet />
+      </main>
+    </>
+  );
 }
 
 export default MainLayout;
