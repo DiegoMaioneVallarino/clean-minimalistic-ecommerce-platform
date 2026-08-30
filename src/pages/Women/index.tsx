@@ -1,17 +1,13 @@
 import { products } from "../../services/products";
-import ProductGrid from "../../components/ProductGrid";
+import CategoryPage from "../../components/CategoryPage";
 
 function Women() {
-    const womenProducts = products.filter(
-        (product) => product.category === "women"
-    );
-
     return (
-        <section>
-            <h1>Women</h1>
-
-            <ProductGrid products={womenProducts} />
-        </section>
+        <CategoryPage
+            title="Women"
+            category="women"
+            products={products}
+        />
     );
 }
 

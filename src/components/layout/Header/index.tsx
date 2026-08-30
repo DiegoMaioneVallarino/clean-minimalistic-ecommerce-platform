@@ -1,65 +1,46 @@
 import { NavLink } from "react-router-dom";
+import "../../../styles/header.css";
 
 function Header() {
-  return (
-    <header>
-      <nav>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
-          Home
-        </NavLink>
+    return (
+        <header className="main-header">
 
-        <NavLink
-          to="/men"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
-          Men
-        </NavLink>
+            <div className="logo-area">
+                <NavLink to="/">
+                    MINIMAL
+                </NavLink>
+            </div>
 
-        <NavLink
-          to="/women"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
-          Women
-        </NavLink>
+            <nav className="main-nav">
+                <NavLink to="/men">
+                    Men
+                </NavLink>
 
-        <NavLink
-          to="/sales"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
-          Sales
-        </NavLink>
+                <NavLink to="/women">
+                    Women
+                </NavLink>
 
-        <NavLink
-          to="/cart"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
-          Cart
-        </NavLink>
+                <NavLink to="/sales">
+                    Sales
+                </NavLink>
 
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
-          Login
-        </NavLink>
-      </nav>
-    </header>
-  );
+                <NavLink to="/catalog">
+                    Catalog
+                </NavLink>
+            </nav>
+
+            <div className="header-actions">
+                <NavLink to="/cart">
+                    Cart
+                </NavLink>
+
+                <NavLink to="/login">
+                    Login
+                </NavLink>
+            </div>
+
+        </header>
+    );
 }
 
 export default Header;

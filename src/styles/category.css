@@ -1,0 +1,16 @@
+.category-page {
+    padding: 60px 40px;
+}
+
+.category-header {
+    margin-bottom: 48px;
+}
+
+.category-header p {
+    margin-bottom: 8px;
+}
+
+.category-header h1 {
+    margin: 0;
+    font-size: 48px;
+}

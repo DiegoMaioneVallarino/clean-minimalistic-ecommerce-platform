@@ -1,0 +1,49 @@
+.featured-products {
+    padding: 80px 40px;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.featured-placeholder {
+    min-height: 320px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dcdcdc;
+}
+
+.promo-banner {
+    min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.new-arrivals {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 40px;
+
+    border-bottom: 1px solid #dcdcdc;
+}
