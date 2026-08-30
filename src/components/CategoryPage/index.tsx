@@ -24,8 +24,10 @@ function CategoryPage({
                 <h1>{title}</h1>
             </div>
 
-            <ProductGrid products={filteredProducts} />
-        </section>
+<ProductGrid
+    products={filteredProducts}
+    columns={3}
+/>        </section>
     );
 }
 

@@ -1,0 +1,36 @@
+.product-card {
+    min-width: 0;
+}
+
+.product-card a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.product-card-image {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+
+    background: #f4f4f4;
+}
+
+.product-card-info {
+    padding-top: 14px;
+}
+
+.product-card-info h2 {
+    margin: 0 0 6px;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.product-card-info p {
+    margin: 0;
+
+    font-size: 14px;
+}

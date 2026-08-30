@@ -1,17 +1,23 @@
+import { products } from "../../services/products";
+import ProductGrid from "../ProductGrid";
+
 function FeaturedProducts() {
+
+    const featuredProducts = products.slice(0, 4);
+
     return (
         <section className="featured-products">
+
             <div className="section-header">
+                <p>Selected pieces</p>
                 <h2>Featured Products</h2>
-                <p>Selected essentials for everyday wear.</p>
             </div>
 
-            <div className="featured-grid">
-                <div className="featured-placeholder">Product</div>
-                <div className="featured-placeholder">Product</div>
-                <div className="featured-placeholder">Product</div>
-                <div className="featured-placeholder">Product</div>
-            </div>
+            <ProductGrid
+                products={featuredProducts}
+                columns={4}
+            />
+
         </section>
     );
 }

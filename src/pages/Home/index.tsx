@@ -1,6 +1,8 @@
 import Hero from "../../components/Hero";
 import FeaturedProducts from "../../components/FeaturedProducts";
 import PromoBanner from "../../components/PromoBanner";
+import NewArrivals from "../../components/NewArrivals";
+
 import "../../styles/home.css";
 
 function Home() {
@@ -9,10 +11,7 @@ function Home() {
             <Hero />
             <FeaturedProducts />
             <PromoBanner />
-
-            <section className="new-arrivals">
-                New Arrivals
-            </section>
+            <NewArrivals />
         </>
     );
 }
