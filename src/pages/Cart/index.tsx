@@ -15,7 +15,7 @@ function Cart() {
             sum + item.product.price * item.quantity,
         0
     );
-    
+
     const navigate = useNavigate();
 
     if (items.length === 0) {
@@ -45,7 +45,7 @@ function Cart() {
                         >
 
                             <img
-                                src={item.product.images[0]}
+                                 src={item.product.images.front}
                                 alt={item.product.name}
                             />
 

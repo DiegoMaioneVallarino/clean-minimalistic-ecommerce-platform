@@ -1,6 +1,15 @@
+import "../../styles/hero.css";
+
+import heroImage from "../../img/heros/home_bg.png";
+
 function Hero() {
     return (
-        <section className="hero">
+        <section
+            className="hero"
+            style={{
+                backgroundImage: `url(${heroImage})`,
+            }}
+        >
             <div className="hero-content">
                 <p>New Collection</p>
 
@@ -10,11 +19,9 @@ function Hero() {
                     for everyday wear
                 </h1>
 
-                <button>Shop now</button>
-            </div>
-
-            <div className="hero-image">
-                Image
+                <button>
+                    Shop now
+                </button>
             </div>
         </section>
     );

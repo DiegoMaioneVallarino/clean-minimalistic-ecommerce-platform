@@ -97,3 +97,9 @@
     color: inherit;
     font-weight: 600;
 }
+
+.auth-error {
+    margin: 0;
+    font-size: 13px;
+    color: #b00020;
+}

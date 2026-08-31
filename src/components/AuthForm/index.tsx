@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 import "../../styles/auth.css";
 
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../store/AuthContext";
+
 type AuthMode = "login" | "register";
 
 type AuthFormProps = {
@@ -16,29 +19,99 @@ function AuthForm({
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
+    const [error, setError] = useState("");
+
 
     const isRegister = mode === "register";
+    const { login, register } = useAuth();
 
-    function handleSubmit(
-        event: React.FormEvent<HTMLFormElement>
+    const navigate = useNavigate();
+
+
+    function validateEmail(
+    email: string
+): boolean {
+    return (
+        email.includes("@") &&
+        email.includes(".")
+    );
+}
+
+function validatePassword(
+    password: string
+): boolean {
+    return password.length >= 6;
+}
+
+function handleSubmit(
+    event: React.FormEvent<HTMLFormElement>
+) {
+    event.preventDefault();
+
+    setError("");
+
+    if (!validateEmail(email)) {
+        setError(
+            "Enter a valid email address."
+        );
+
+        return;
+    }
+
+    if (!validatePassword(password)) {
+        setError(
+            "Password must contain at least 6 characters."
+        );
+
+        return;
+    }
+
+    if (
+        isRegister &&
+        name.trim().length < 2
     ) {
-        event.preventDefault();
+        setError(
+            "Name must contain at least 2 characters."
+        );
 
-        if (isRegister) {
-            console.log({
-                name,
-                email,
-                password,
-            });
+        return;
+    }
+
+    if (isRegister) {
+        const success = register(
+            name.trim(),
+            email,
+            password
+        );
+
+        if (!success) {
+            setError(
+                "Unable to create account."
+            );
 
             return;
         }
 
-        console.log({
-            email,
-            password,
-        });
+        navigate("/");
+
+        return;
     }
+
+    const success = login(
+        email,
+        password
+    );
+
+    if (!success) {
+        setError(
+            "Invalid email or password."
+        );
+
+        return;
+    }
+
+    navigate("/");
+}
 
     return (
         <section className="auth-page">
@@ -115,7 +188,11 @@ function AuthForm({
                             required
                         />
                     </label>
-
+                            {error && (
+                <p className="auth-error">
+                    {error}
+                </p>
+            )}
                     <button type="submit">
                         {isRegister
                             ? "Create account"

@@ -14,9 +14,10 @@ function FeaturedProducts() {
             </div>
 
             <ProductGrid
-                products={featuredProducts}
-                columns={4}
-            />
+    products={featuredProducts}
+    columns={4}
+    hoverMode="alternate"
+/>
 
         </section>
     );

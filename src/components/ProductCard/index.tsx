@@ -4,19 +4,49 @@ import "../../styles/product-card.css";
 
 type ProductCardProps = {
     product: Product;
+    hoverMode?: "alternate" | "zoom";
 };
 
-function ProductCard({ product }: ProductCardProps) {
-    return (
-        <article className="product-card">
+function ProductCard({
+    product,
+    hoverMode = "alternate",
+}: ProductCardProps) {
 
+    const hoverImage =
+        product.images.model ??
+        product.images.back;
+
+    const hasAlternateImage =
+        hoverMode === "alternate" &&
+        hoverImage !== undefined;
+
+    return (
+        <article
+            className={`
+                product-card
+                ${hasAlternateImage ? "has-alternate" : ""}
+                ${hoverMode === "zoom" ? "zoom-hover" : ""}
+            `}
+        >
             <Link to={`/product/${product.id}`}>
 
-                <img
-                    src={product.images[0]}
-                    alt={product.name}
-                    className="product-card-image"
-                />
+                <div className="product-card-images">
+
+                    <img
+                        src={product.images.front}
+                        alt={product.name}
+                        className="product-card-image product-card-front"
+                    />
+
+                    {hasAlternateImage && (
+                        <img
+                            src={hoverImage}
+                            alt={`${product.name} alternate view`}
+                            className="product-card-image product-card-hover"
+                        />
+                    )}
+
+                </div>
 
                 <div className="product-card-info">
                     <h2>{product.name}</h2>
@@ -24,7 +54,6 @@ function ProductCard({ product }: ProductCardProps) {
                 </div>
 
             </Link>
-
         </article>
     );
 }

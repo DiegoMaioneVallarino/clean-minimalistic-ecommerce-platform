@@ -85,7 +85,7 @@ function Checkout() {
                         className="checkout-item"
                     >
                         <img
-                            src={item.product.images[0]}
+                             src={item.product.images.front}
                             alt={item.product.name}
                         />
 

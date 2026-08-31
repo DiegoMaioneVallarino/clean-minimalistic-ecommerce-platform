@@ -14,9 +14,10 @@ function NewArrivals() {
             </div>
 
             <ProductGrid
-                products={newArrivals}
-                columns={6}
-            />
+    products={newArrivals}
+    columns={6}
+    hoverMode="zoom"
+/>
 
         </section>
     );

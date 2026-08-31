@@ -3,14 +3,26 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 
 import router from "./app/router";
+
 import { CartProvider } from "./store/CartContext";
+import { AuthProvider } from "./store/AuthContext";
 
 createRoot(
     document.getElementById("root")!
 ).render(
     <StrictMode>
-        <CartProvider>
-            <RouterProvider router={router} />
-        </CartProvider>
+
+        <AuthProvider>
+
+            <CartProvider>
+
+                <RouterProvider
+                    router={router}
+                />
+
+            </CartProvider>
+
+        </AuthProvider>
+
     </StrictMode>
 );
