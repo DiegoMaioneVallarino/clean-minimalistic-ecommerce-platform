@@ -125,3 +125,21 @@
 
     cursor: pointer;
 }
+
+.cart-item-price {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.cart-original-price {
+    color: #d40000;
+
+    text-decoration: line-through;
+}
+
+.cart-discounted-price {
+    color: black;
+}

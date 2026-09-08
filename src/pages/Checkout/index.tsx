@@ -1,5 +1,7 @@
 import { useCart } from "../../store/CartContext";
 import "../../styles/checkout.css";
+import { getFinalPrice } from "../../utils/getFinalPrice";
+
 
 function Checkout() {
     const { items } = useCart();
@@ -96,11 +98,23 @@ function Checkout() {
                             </span>
                         </div>
 
+                        <div className="checkout-item-price">
+
+                        {(item.product.discount ?? 0) > 0 && (
+                            <span className="checkout-original-price">
+                                $
+                                {item.product.price *
+                                    item.quantity}
+                            </span>
+                        )}
+
                         <strong>
                             $
-                            {item.product.price *
+                            {getFinalPrice(item.product) *
                                 item.quantity}
                         </strong>
+
+                    </div>
                     </div>
                 ))}
 

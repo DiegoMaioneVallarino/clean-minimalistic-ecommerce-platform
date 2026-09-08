@@ -5,6 +5,10 @@ import ProductCard from "../../components/ProductCard";
 
 import "../../styles/catalog.css";
 
+import {
+    useSearchParams,
+} from "react-router-dom";
+
 type CatalogCategory =
     | "all"
     | "men"
@@ -26,20 +30,58 @@ function Catalog() {
     const [showSold, setShowSold] =
         useState(false);
 
+    const [searchParams] =
+    useSearchParams();
 
-    let visibleProducts =
-        showSold
-            ? products.filter(
-                  (product) =>
-                      (product.soldCount ?? 0) > 0
-              )
-            : selectedCategory === "all"
-                ? products
-                : products.filter(
-                      (product) =>
-                          product.category ===
-                          selectedCategory
-                  );
+    const query =
+    searchParams
+        .get("q")
+        ?.trim()
+        .toLowerCase() ?? "";
+
+  let visibleProducts = [...products];
+
+
+if (showSold) {
+
+    visibleProducts =
+        visibleProducts.filter(
+            (product) =>
+                (product.soldCount ?? 0) > 0
+        );
+
+} else if (
+    selectedCategory !== "all"
+) {
+
+    visibleProducts =
+        visibleProducts.filter(
+            (product) =>
+                product.category ===
+                selectedCategory
+        );
+}
+
+
+if (query) {
+
+    visibleProducts =
+        visibleProducts.filter(
+            (product) => {
+
+                const searchableText = `
+                    ${product.name}
+                    ${product.category}
+                    ${product.subcategory ?? ""}
+                    ${product.description}
+                `.toLowerCase();
+
+                return searchableText.includes(
+                    query
+                );
+            }
+        );
+}
 
 
     if (priceOrder === "low-high") {

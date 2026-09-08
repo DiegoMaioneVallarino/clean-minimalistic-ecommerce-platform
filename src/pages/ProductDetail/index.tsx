@@ -9,6 +9,8 @@ import { products } from "../../services/products";
 import { useCart } from "../../store/CartContext";
 import { flyToCart } from "../../utils/flyToCart";
 
+import { getFinalPrice } from "../../utils/getFinalPrice";
+
 import "../../styles/product-detail.css";
 
 function ProductDetail() {
@@ -39,6 +41,15 @@ function ProductDetail() {
             </section>
         );
     }
+
+    const isOutOfStock =
+    product.stock <= 0;
+
+    const isOnSale =
+    (product.discount ?? 0) > 0;
+
+    const finalPrice =
+    getFinalPrice(product);
 
     const productImages = [
         product.images.model,
@@ -112,14 +123,50 @@ function ProductDetail() {
 
 
                 <div className="product-price-row">
-
+                        {isOutOfStock && (
+                            <p className="product-stock-status">
+                                Out of stock
+                            </p>
+                        )}
                     <div className="product-price">
-                        ${product.price}
 
-                        <span>
-                            MXN
-                        </span>
+                        {isOnSale ? (
+                            <>
+                                <span className="product-original-price">
+                                    ${product.price}
+                                </span>
+
+                                <span className="product-discounted-price">
+                                    ${finalPrice}
+                                </span>
+
+                                <span className="product-currency">
+                                    MXN
+                                </span>
+                            </>
+                        ) : (
+                            <>
+                                <span>
+                                    ${product.price}
+                                </span>
+
+                                <span className="product-currency">
+                                    MXN
+                                </span>
+                            </>
+
+                            
+                        )}
+
                     </div>
+
+                      {isOnSale && (
+                        <span className="product-discount-percent">
+                            -{product.discount}%
+                        </span>
+                    )}
+
+                    
 
 
                     {product.colors &&

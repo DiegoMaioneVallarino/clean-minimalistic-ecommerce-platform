@@ -338,3 +338,44 @@
     }
 
 }
+
+
+.product-original-price {
+    color: #d40000;
+
+    text-decoration: line-through;
+
+    text-decoration-thickness: 1px;
+}
+
+.product-discounted-price {
+    color: black;
+}
+
+.product-discount-percent {
+    color: #d40000;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.product-currency {
+    font-size: 13px;
+}
+
+.product-stock-status {
+    margin: 0 0 18px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.add-to-cart-button:disabled {
+    background: #b5b5b5;
+
+    cursor: not-allowed;
+}

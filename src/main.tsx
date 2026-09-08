@@ -7,6 +7,8 @@ import router from "./app/router";
 import { CartProvider } from "./store/CartContext";
 import { AuthProvider } from "./store/AuthContext";
 
+import { ProductProvider } from "./store/ProductContext";
+
 createRoot(
     document.getElementById("root")!
 ).render(
@@ -14,15 +16,19 @@ createRoot(
 
         <AuthProvider>
 
-            <CartProvider>
+    <ProductProvider>
 
-                <RouterProvider
-                    router={router}
-                />
+        <CartProvider>
 
-            </CartProvider>
+            <RouterProvider
+                router={router}
+            />
 
-        </AuthProvider>
+        </CartProvider>
+
+    </ProductProvider>
+
+</AuthProvider>
 
     </StrictMode>
 );

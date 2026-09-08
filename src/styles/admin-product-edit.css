@@ -1,0 +1,156 @@
+.admin-product-edit {
+    padding:
+        45px
+        50px
+        80px;
+}
+
+.admin-edit-header {
+    margin-bottom: 35px;
+}
+
+.admin-edit-header p {
+    margin:
+        0
+        0
+        7px;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+.admin-edit-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 500;
+}
+
+
+.admin-edit-layout {
+    display: grid;
+
+    grid-template-columns:
+        280px
+        minmax(0, 600px);
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+.admin-edit-preview {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.admin-edit-preview img {
+    width: 100%;
+
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+
+    background: #f5f5f5;
+}
+
+.admin-edit-preview p {
+    margin: 0;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+.admin-edit-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+.admin-edit-form label {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    font-size: 12px;
+}
+
+.admin-edit-form input,
+.admin-edit-form select,
+.admin-edit-form textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    border:
+        1px solid
+        #d8d8d8;
+
+    background: white;
+
+    font: inherit;
+
+    outline: none;
+}
+
+.admin-edit-form textarea {
+    min-height: 140px;
+
+    resize: vertical;
+}
+
+.admin-edit-form input:focus,
+.admin-edit-form select:focus,
+.admin-edit-form textarea:focus {
+    border-color: black;
+}
+
+
+.admin-edit-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 16px;
+}
+
+
+.admin-edit-actions {
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.admin-save-button {
+    padding:
+        12px
+        20px;
+
+    border:
+        1px solid
+        black;
+
+    background: black;
+
+    color: white;
+
+    font: inherit;
+
+    cursor: pointer;
+}

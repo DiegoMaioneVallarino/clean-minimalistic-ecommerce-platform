@@ -13,7 +13,8 @@ export interface Product {
     id: number;
     name: string;
     price: number;
-
+    stock: number;
+    
     category: string;
     subcategory?: string;
 
@@ -25,4 +26,5 @@ export interface Product {
     images: ProductImages;
 
     description: string;
+    discount?: number;
 }

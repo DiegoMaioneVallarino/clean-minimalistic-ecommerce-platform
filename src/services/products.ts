@@ -19,22 +19,28 @@ import product5Front from "../img/items/5/front.jpg";
 
 export const products: Product[] = [
     {
-        id: 0,
-        name: "Worldwide Tee",
-        price: 699,
-        category: "women",
-       images: {
-    front: product0Front,
-    back: product0Back,
-},
-        description:
-            "Graphic oversized tee with front and back print.",
+    id: 0,
+    name: "Worldwide Tee",
+    price: 699,
+
+    discount: 20,
+
+    category: "women",
+    stock:0,
+    images: {
+        front: product0Front,
+        back: product0Back,
     },
+
+    description:
+        "Graphic oversized tee with front and back print.",
+},
 
     {
         id: 1,
         name: "Graphic Tee",
         price: 649,
+        stock:1,
         category: "women",
         images: {
             front: product1Front,
@@ -44,21 +50,28 @@ export const products: Product[] = [
     },
 
     {
-        id: 2,
-        name: "Racing Hoodie",
-        price: 1299,
-        category: "men",
-        images: {
-            front: product2Front,
-            back: product2Back,
-        },
-        description:
-            "Racing-inspired hoodie with contrast panels and graphic details.",
+    id: 2,
+    name: "Racing Hoodie",
+    price: 1299,
+        stock:1,
+
+    discount: 30,
+
+    category: "men",
+
+    images: {
+        front: product2Front,
+        back: product2Back,
     },
+
+    description:
+        "Racing-inspired hoodie with contrast panels and graphic details.",
+},
     {
     id: 3,
     name: "Graphic Black Tee",
     price: 699,
+    stock:1,
 
     category: "men",
     subcategory: "tees",
@@ -87,10 +100,11 @@ export const products: Product[] = [
         "Ashda RK1987 black and red retro tshirt",
 },{
     id: 4,
-    name: "New Item",
+    name: "Scream tee",
     price: 799,
+    discount: 30,
     category: "women",
-
+    stock:1,
     images: {
         front: product4Front,
         model: product4Model,
@@ -102,8 +116,9 @@ export const products: Product[] = [
     id: 5,
     name: "New Item",
     price: 899,
+    discount: 30,
     category: "men",
-
+    stock:1,
     images: {
         front: product5Front,
     },

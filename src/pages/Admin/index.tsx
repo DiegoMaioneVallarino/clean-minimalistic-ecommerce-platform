@@ -8,6 +8,11 @@ import {
 
 import "../../styles/admin.css";
 
+import { NavLink } from "react-router-dom";
+
+import {
+    useProducts,
+} from "../../store/ProductContext";
 
 type AdminSection =
     | "products"
@@ -127,7 +132,10 @@ function Admin() {
 
 
 function ProductsAdmin() {
-
+        const {
+            products,
+            deleteProduct,
+        } = useProducts();
     return (
         <>
 
@@ -144,11 +152,12 @@ function ProductsAdmin() {
                 </div>
 
 
-                <button
+                <NavLink
+                    to="/admin/products/new"
                     className="admin-primary-button"
                 >
                     Add product
-                </button>
+                </NavLink>
 
             </header>
 
@@ -214,11 +223,17 @@ function ProductsAdmin() {
 
                                 <div className="admin-actions">
 
-                                    <button>
-                                        Edit
-                                    </button>
+                                  <NavLink
+                                    to={`/admin/products/${product.id}/edit`}
+                                >
+                                    Edit
+                                </NavLink>
 
-                                    <button>
+                                    <button
+                                        onClick={() =>
+                                            deleteProduct(product.id)
+                                        }
+                                    >
                                         Delete
                                     </button>
 

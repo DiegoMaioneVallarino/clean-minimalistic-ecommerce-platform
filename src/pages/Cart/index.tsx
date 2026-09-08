@@ -1,6 +1,9 @@
 import { useCart } from "../../store/CartContext";
 import "../../styles/cart.css";
 import { useNavigate } from "react-router-dom";
+
+import { getFinalPrice } from "../../utils/getFinalPrice";
+
 function Cart() {
 
     const {
@@ -11,10 +14,12 @@ function Cart() {
     } = useCart();
 
     const total = items.reduce(
-        (sum, item) =>
-            sum + item.product.price * item.quantity,
-        0
-    );
+    (sum, item) =>
+        sum +
+        getFinalPrice(item.product) *
+        item.quantity,
+    0
+);
 
     const navigate = useNavigate();
 
@@ -55,9 +60,23 @@ function Cart() {
                                     {item.product.name}
                                 </h2>
 
-                                <p>
-                                    ${item.product.price}
-                                </p>
+                                {(item.product.discount ?? 0) > 0 ? (
+                                    <div className="cart-item-price">
+
+                                        <span className="cart-original-price">
+                                            ${item.product.price}
+                                        </span>
+
+                                        <span className="cart-discounted-price">
+                                            ${getFinalPrice(item.product)}
+                                        </span>
+
+                                    </div>
+                                ) : (
+                                    <p>
+                                        ${item.product.price}
+                                    </p>
+                                )}
 
                                 <div className="cart-quantity">
 

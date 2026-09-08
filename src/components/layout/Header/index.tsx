@@ -5,6 +5,10 @@ import { useAuth } from "../../../store/AuthContext";
 import {
     useState,
 } from "react";
+import {
+    useNavigate,
+} from "react-router-dom";
+
 
 import "../../../styles/header.css";
 
@@ -26,6 +30,12 @@ function Header() {
         0
     );
 
+    const [search, setSearch] =
+    useState("");
+
+    const navigate =
+    useNavigate();
+
     return (
         <header className="main-header">
 
@@ -46,12 +56,37 @@ function Header() {
                 <NavLink to="/catalog">Catalog</NavLink>
             </nav>
 
-            <div className="header-search">
-                <input
-                    type="text"
-                    placeholder="Search products"
-                />
-            </div>
+            <form
+    className="header-search"
+    onSubmit={(event) => {
+        event.preventDefault();
+
+        const query =
+            search.trim();
+
+        if (!query) {
+            return;
+        }
+
+        navigate(
+            `/catalog?q=${encodeURIComponent(query)}`
+        );
+    }}
+>
+    <input
+        type="text"
+
+        value={search}
+
+        onChange={(event) =>
+            setSearch(
+                event.target.value
+            )
+        }
+
+        placeholder="Search products"
+    />
+</form>
 
            <div className="header-actions">
 

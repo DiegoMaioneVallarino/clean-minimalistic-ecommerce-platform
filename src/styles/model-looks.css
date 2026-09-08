@@ -75,7 +75,20 @@
 
     font-size: 13px;
 }
+.model-look-price {
+    display: flex;
 
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+}
+
+.model-look-card.out-of-stock
+.model-look-image {
+    filter: grayscale(1);
+}
 .model-look-card,
 .model-look-card:visited,
 .model-look-card:hover,
