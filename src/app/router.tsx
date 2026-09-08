@@ -12,6 +12,7 @@ import Catalog from "../pages/Catalog";
 import ProductDetail from "../pages/ProductDetail";
 import Checkout from "../pages/Checkout";
 import Register from "../pages/Register";
+import Admin from "../pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
     path: "register",
     element: <Register />,
+},
+{
+    path: "admin",
+    element: <Admin />,
 },
     ],
   },
