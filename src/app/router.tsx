@@ -14,6 +14,8 @@ import Checkout from "../pages/Checkout";
 import Register from "../pages/Register";
 import Admin from "../pages/Home";
 
+import RequireAdmin from "../components/RequireAdmin";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -61,7 +63,11 @@ const router = createBrowserRouter([
 },
 {
     path: "admin",
-    element: <Admin />,
+    element: (
+        <RequireAdmin>
+            <Admin />
+        </RequireAdmin>
+    ),
 },
     ],
   },

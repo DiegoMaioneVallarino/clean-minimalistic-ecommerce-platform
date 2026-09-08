@@ -1,5 +1,316 @@
+import {
+    useState,
+} from "react";
+
+import {
+    products,
+} from "../../services/products";
+
+import "../../styles/admin.css";
+
+
+type AdminSection =
+    | "products"
+    | "orders";
+
+
+const mockOrders = [
+    {
+        id: "#1004",
+        customer: "Alex Morgan",
+        status: "Paid",
+        total: 1299,
+    },
+
+    {
+        id: "#1003",
+        customer: "Sam Rivera",
+        status: "Pending",
+        total: 699,
+    },
+
+    {
+        id: "#1002",
+        customer: "Jordan Lee",
+        status: "Shipped",
+        total: 2198,
+    },
+];
+
+
 function Admin() {
-    return <h1>Admin</h1>;
+
+    const [
+        section,
+        setSection,
+    ] = useState<AdminSection>(
+        "products"
+    );
+
+
+    return (
+        <section className="admin-page">
+
+            <aside className="admin-sidebar">
+
+                <div>
+                    <p className="admin-label">
+                        Admin Mode
+                    </p>
+
+                    <h1>
+                        Store
+                    </h1>
+                </div>
+
+
+                <nav className="admin-nav">
+
+                    <button
+                        className={
+                            section === "products"
+                                ? "active"
+                                : ""
+                        }
+
+                        onClick={() =>
+                            setSection(
+                                "products"
+                            )
+                        }
+                    >
+                        Products
+                    </button>
+
+
+                    <button
+                        className={
+                            section === "orders"
+                                ? "active"
+                                : ""
+                        }
+
+                        onClick={() =>
+                            setSection(
+                                "orders"
+                            )
+                        }
+                    >
+                        Orders
+                    </button>
+
+                </nav>
+
+            </aside>
+
+
+            <div className="admin-content">
+
+                {section === "products" && (
+
+                    <ProductsAdmin />
+
+                )}
+
+
+                {section === "orders" && (
+
+                    <OrdersAdmin />
+
+                )}
+
+            </div>
+
+        </section>
+    );
 }
+
+
+function ProductsAdmin() {
+
+    return (
+        <>
+
+            <header className="admin-content-header">
+
+                <div>
+                    <p>
+                        Store administration
+                    </p>
+
+                    <h2>
+                        Products
+                    </h2>
+                </div>
+
+
+                <button
+                    className="admin-primary-button"
+                >
+                    Add product
+                </button>
+
+            </header>
+
+
+            <section className="admin-panel">
+
+                <div className="admin-table">
+
+                    <div
+                        className="
+                            admin-product-row
+                            admin-table-head
+                        "
+                    >
+                        <span>Product</span>
+                        <span>Category</span>
+                        <span>Price</span>
+                        <span>Sold</span>
+                        <span>Actions</span>
+                    </div>
+
+
+                    {products.map(
+                        (product) => (
+
+                            <div
+                                key={product.id}
+                                className="admin-product-row"
+                            >
+
+                                <div className="admin-product">
+
+                                    <img
+                                        src={
+                                            product.images.front
+                                        }
+                                        alt={
+                                            product.name
+                                        }
+                                    />
+
+                                    <span>
+                                        {product.name}
+                                    </span>
+
+                                </div>
+
+
+                                <span>
+                                    {product.category}
+                                </span>
+
+
+                                <span>
+                                    ${product.price}
+                                </span>
+
+
+                                <span>
+                                    {product.soldCount ?? 0}
+                                </span>
+
+
+                                <div className="admin-actions">
+
+                                    <button>
+                                        Edit
+                                    </button>
+
+                                    <button>
+                                        Delete
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        )
+                    )}
+
+                </div>
+
+            </section>
+
+        </>
+    );
+}
+
+
+function OrdersAdmin() {
+
+    return (
+        <>
+
+            <header className="admin-content-header">
+
+                <div>
+                    <p>
+                        Store administration
+                    </p>
+
+                    <h2>
+                        Orders
+                    </h2>
+                </div>
+
+            </header>
+
+
+            <section className="admin-panel">
+
+                <div className="admin-table">
+
+                    <div
+                        className="
+                            admin-order-row
+                            admin-table-head
+                        "
+                    >
+                        <span>Order</span>
+                        <span>Customer</span>
+                        <span>Status</span>
+                        <span>Total</span>
+                    </div>
+
+
+                    {mockOrders.map(
+                        (order) => (
+
+                            <div
+                                key={order.id}
+                                className="admin-order-row"
+                            >
+
+                                <span>
+                                    {order.id}
+                                </span>
+
+                                <span>
+                                    {order.customer}
+                                </span>
+
+                                <span>
+                                    {order.status}
+                                </span>
+
+                                <span>
+                                    ${order.total}
+                                </span>
+
+                            </div>
+
+                        )
+                    )}
+
+                </div>
+
+            </section>
+
+        </>
+    );
+}
+
 
 export default Admin;
