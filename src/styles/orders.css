@@ -1,0 +1,612 @@
+.orders-page {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding:
+        50px
+        40px
+        100px;
+}
+
+
+/* TOP */
+
+
+.orders-topbar {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 35px;
+
+    margin-bottom: 35px;
+}
+
+
+.orders-title p {
+    margin:
+        0
+        0
+        6px;
+
+    color: #888;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+
+.orders-title h1 {
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 500;
+}
+
+
+.orders-search {
+    width: 340px;
+}
+
+
+.orders-search input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding:
+        11px
+        14px;
+
+    border:
+        1px solid
+        #dcdcdc;
+
+    outline: none;
+
+    background: white;
+
+    font: inherit;
+
+    font-size: 13px;
+}
+
+
+.orders-search input:focus {
+    border-color: black;
+}
+
+
+/* LAYOUT */
+
+
+.orders-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        280px;
+
+    gap: 35px;
+
+    align-items: start;
+}
+
+
+.orders-main {
+    min-width: 0;
+}
+
+
+/* ORDER HEADER + HELP */
+
+
+.orders-section-header {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.orders-help {
+    position: relative;
+}
+
+
+.orders-help-button {
+    padding:
+        8px
+        16px;
+
+    border:
+        1px solid
+        black;
+
+    background: black;
+
+    color: white;
+
+    font: inherit;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.orders-help-button:hover {
+    opacity: 0.8;
+}
+
+
+.help-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    right: 0;
+
+    z-index: 30;
+
+    width: 190px;
+
+    border:
+        1px solid
+        #dedede;
+
+    background: white;
+
+    box-shadow:
+        0
+        8px
+        24px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+.help-menu button {
+    display: block;
+
+    width: 100%;
+
+    padding:
+        12px
+        14px;
+
+    border: 0;
+
+    border-bottom:
+        1px solid
+        #eeeeee;
+
+    background: white;
+
+    color: black;
+
+    text-align: left;
+
+    font: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.help-menu button:last-child {
+    border-bottom: 0;
+}
+
+
+.help-menu button:hover {
+    background: #f5f5f5;
+}
+
+
+/* ORDERS */
+
+
+.orders-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.order-card {
+    border:
+        1px solid
+        #e5e5e5;
+
+    background: white;
+}
+
+
+.order-card-header {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    padding:
+        20px
+        22px;
+
+    border-bottom:
+        1px solid
+        #eeeeee;
+}
+
+
+.order-card-header > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.order-label {
+    color: #888;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.order-card-header strong {
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.order-items {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.order-item {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        auto;
+
+    gap: 25px;
+
+    padding:
+        16px
+        22px;
+
+    border-bottom:
+        1px solid
+        #f0f0f0;
+
+    font-size: 13px;
+}
+
+
+.order-item:last-child {
+    border-bottom: 0;
+}
+
+
+.orders-empty {
+    padding: 50px;
+
+    border:
+        1px solid
+        #e5e5e5;
+
+    text-align: center;
+
+    color: #777;
+}
+
+
+/* ADDRESS */
+
+
+.orders-sidebar {
+    position: sticky;
+
+    top: 110px;
+}
+
+
+.address-card {
+    padding: 22px;
+
+    border:
+        1px solid
+        #e5e5e5;
+
+    background: white;
+}
+
+
+.address-card-header {
+    padding-bottom: 18px;
+
+    margin-bottom: 18px;
+
+    border-bottom:
+        1px solid
+        #eeeeee;
+}
+
+
+.address-card-header p {
+    margin:
+        0
+        0
+        4px;
+
+    color: #888;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.address-card-header h2 {
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+
+.address-data {
+    margin-bottom: 22px;
+}
+
+
+.address-data strong {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 13px;
+}
+
+
+.address-data p {
+    margin:
+        4px
+        0;
+
+    color: #555;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.edit-address-button {
+    width: 100%;
+
+    padding:
+        10px
+        14px;
+
+    border:
+        1px solid
+        black;
+
+    background: white;
+
+    color: black;
+
+    cursor: pointer;
+
+    font: inherit;
+
+    font-size: 12px;
+}
+
+
+.edit-address-button:hover {
+    background: black;
+
+    color: white;
+}
+
+
+/* ADDRESS FORM */
+
+
+.address-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.address-form label {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    color: #666;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+
+.address-form input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding:
+        9px
+        10px;
+
+    border:
+        1px solid
+        #dddddd;
+
+    outline: none;
+
+    background: white;
+
+    color: black;
+
+    font: inherit;
+
+    font-size: 12px;
+
+    text-transform: none;
+
+    letter-spacing: normal;
+}
+
+
+.address-form input:focus {
+    border-color: black;
+}
+
+
+.address-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 8px;
+
+    margin-top: 8px;
+}
+
+
+.address-actions button {
+    padding:
+        10px
+        8px;
+
+    font: inherit;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.address-cancel-button {
+    border:
+        1px solid
+        #cccccc;
+
+    background: white;
+
+    color: black;
+}
+
+
+.address-save-button {
+    border:
+        1px solid
+        black;
+
+    background: black;
+
+    color: white;
+}
+
+
+/* RESPONSIVE */
+
+
+@media (max-width: 900px) {
+
+    .orders-layout {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .orders-sidebar {
+        position: static;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .orders-page {
+        padding:
+            30px
+            20px
+            80px;
+    }
+
+
+    .orders-topbar {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .orders-search {
+        width: 100%;
+    }
+
+
+    .order-card-header {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+
+    .order-item {
+        grid-template-columns:
+            1fr;
+    }
+
+}
