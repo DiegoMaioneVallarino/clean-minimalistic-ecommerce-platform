@@ -17,6 +17,18 @@ import {
 import AdminSummary
     from "../../components/AdminSummary";
 
+import AdminCustomers
+    from "../../components/AdminCustomers";
+
+import AdminMessages
+    from "../../components/AdminMessages";
+
+import AdminBlog
+    from "../../components/AdminBlog";
+
+import AdminDiscounts
+    from "../../components/AdminDiscounts";
+
 type AdminSection =
     | "summary"
     | "products"
@@ -197,31 +209,23 @@ function Admin() {
                 )}
 
                 {section === "customers" && (
-                    <div className="admin-placeholder">
-                        Customers
-                    </div>
-                )}
+                        <AdminCustomers />
+                    )}
 
 
-                {section === "messages" && (
-                    <div className="admin-placeholder">
-                        Messages
-                    </div>
-                )}
+                    {section === "messages" && (
+                        <AdminMessages />
+                    )}
 
 
                 {section === "blog" && (
-                    <div className="admin-placeholder">
-                        Blog
-                    </div>
-                )}
+                        <AdminBlog />
+                    )}
 
 
-                {section === "discounts" && (
-                    <div className="admin-placeholder">
-                        Discounts
-                    </div>
-                )}
+                    {section === "discounts" && (
+                        <AdminDiscounts />
+                    )}
 
             </div>
 
