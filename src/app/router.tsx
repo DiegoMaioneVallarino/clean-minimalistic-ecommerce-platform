@@ -19,6 +19,7 @@ import AdminProductCreate from "../pages/AdminProductCreate";
 
 import Orders from "../pages/Orders";
 import Settings from "../pages/Settings";
+import Profile from "../pages/Profile";
 
 const router = createBrowserRouter([
     {
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
                         <Admin />
                     </RequireAdmin>
                 ),
+            },
+            {
+                path: "profile",
+                element: <Profile />,
             },
             {
                 path: "admin/products/:id/edit",
