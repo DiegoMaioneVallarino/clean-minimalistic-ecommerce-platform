@@ -2,24 +2,41 @@ import {
     createContext,
     useContext,
     useState,
-    type ReactNode,
+    type ReactNode
 } from "react";
 
 import defaultAvatar from "../img/user/default-avatar.jpg";
 
 
-type User = {
+export type UserSettings = {
+    orderUpdates: boolean;
+    promotions: boolean;
+};
+
+
+export type User = {
     name: string;
     email: string;
     avatar: string;
 
     balance: number;
 
-    role: "user" | "admin";
+    role:
+        | "user"
+        | "admin";
+
+    settings: UserSettings;
+};
+
+
+type UpdateProfileData = {
+    name: string;
+    email: string;
 };
 
 
 type AuthContextType = {
+
     user: User | null;
 
     login: (
@@ -38,6 +55,14 @@ type AuthContextType = {
     addBalance: (
         amount: number
     ) => void;
+
+    updateProfile: (
+        data: UpdateProfileData
+    ) => void;
+
+    updateSettings: (
+        settings: UserSettings
+    ) => void;
 };
 
 
@@ -53,11 +78,13 @@ type AuthProviderProps = {
 
 
 export function AuthProvider({
-    children,
+    children
 }: AuthProviderProps) {
 
     const [user, setUser] =
-        useState<User | null>(null);
+        useState<User | null>(
+            null
+        );
 
 
     function login(
@@ -72,16 +99,25 @@ export function AuthProvider({
 
             setUser({
                 name: "Test User",
+
                 email,
-                avatar: defaultAvatar,
+
+                avatar:
+                    defaultAvatar,
 
                 balance: 2500,
 
                 role: "admin",
+
+                settings: {
+                    orderUpdates: true,
+                    promotions: false,
+                },
             });
 
             return true;
         }
+
 
         return false;
     }
@@ -101,17 +137,34 @@ export function AuthProvider({
             return false;
         }
 
+
         setUser({
             name,
+
             email,
-            avatar: defaultAvatar,
+
+            avatar:
+                defaultAvatar,
 
             balance: 0,
 
             role: "user",
+
+            settings: {
+                orderUpdates: true,
+                promotions: false,
+            },
         });
 
+
         return true;
+    }
+
+
+    function logout() {
+
+        setUser(null);
+
     }
 
 
@@ -123,25 +176,75 @@ export function AuthProvider({
             return;
         }
 
-        setUser((currentUser) => {
 
-            if (!currentUser) {
-                return null;
+        setUser(
+            (currentUser) => {
+
+                if (!currentUser) {
+                    return null;
+                }
+
+
+                return {
+                    ...currentUser,
+
+                    balance:
+                        currentUser.balance +
+                        amount,
+                };
+
             }
-
-            return {
-                ...currentUser,
-
-                balance:
-                    currentUser.balance +
-                    amount,
-            };
-        });
+        );
     }
 
 
-    function logout() {
-        setUser(null);
+    function updateProfile(
+        data: UpdateProfileData
+    ) {
+
+        setUser(
+            (currentUser) => {
+
+                if (!currentUser) {
+                    return null;
+                }
+
+
+                return {
+                    ...currentUser,
+
+                    name:
+                        data.name,
+
+                    email:
+                        data.email,
+                };
+
+            }
+        );
+    }
+
+
+    function updateSettings(
+        settings: UserSettings
+    ) {
+
+        setUser(
+            (currentUser) => {
+
+                if (!currentUser) {
+                    return null;
+                }
+
+
+                return {
+                    ...currentUser,
+
+                    settings,
+                };
+
+            }
+        );
     }
 
 
@@ -149,13 +252,20 @@ export function AuthProvider({
         <AuthContext.Provider
             value={{
                 user,
+
                 login,
                 register,
                 logout,
+
                 addBalance,
+
+                updateProfile,
+                updateSettings,
             }}
         >
+
             {children}
+
         </AuthContext.Provider>
     );
 }
@@ -166,11 +276,15 @@ export function useAuth() {
     const context =
         useContext(AuthContext);
 
+
     if (!context) {
+
         throw new Error(
             "useAuth must be used inside AuthProvider"
         );
+
     }
+
 
     return context;
 }

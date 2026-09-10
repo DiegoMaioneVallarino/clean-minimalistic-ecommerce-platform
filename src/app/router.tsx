@@ -18,6 +18,7 @@ import AdminProductEdit from "../pages/AdminProductEdit";
 import AdminProductCreate from "../pages/AdminProductCreate";
 
 import Orders from "../pages/Orders";
+import Settings from "../pages/Settings";
 
 const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
             {
                 path: "register",
                 element: <Register />,
+            },
+            {
+                path: "settings",
+                element: <Settings />,
             },
 
             {

@@ -1,0 +1,325 @@
+.settings-page {
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    padding:
+        50px
+        40px
+        100px;
+}
+
+
+.settings-header {
+    margin-bottom: 35px;
+}
+
+
+.settings-header p {
+    margin:
+        0
+        0
+        6px;
+
+    color: #888;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+
+.settings-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 500;
+}
+
+
+/* FORM */
+
+
+.settings-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    border:
+        1px solid
+        #e5e5e5;
+
+    background: white;
+}
+
+
+.settings-section {
+    display: grid;
+
+    grid-template-columns:
+        240px
+        minmax(0, 1fr);
+
+    gap: 50px;
+
+    padding:
+        30px;
+
+    border-bottom:
+        1px solid
+        #eeeeee;
+}
+
+
+.settings-section-title h2 {
+    margin:
+        0
+        0
+        7px;
+
+    font-size: 16px;
+
+    font-weight: 500;
+}
+
+
+.settings-section-title p {
+    margin: 0;
+
+    max-width: 190px;
+
+    color: #888;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* PROFILE */
+
+
+.settings-fields {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.settings-fields label {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    color: #666;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.settings-fields input {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    padding:
+        11px
+        12px;
+
+    border:
+        1px solid
+        #dddddd;
+
+    outline: none;
+
+    background: white;
+
+    color: black;
+
+    font: inherit;
+
+    font-size: 13px;
+
+    text-transform: none;
+
+    letter-spacing: normal;
+}
+
+
+.settings-fields input:focus {
+    border-color: black;
+}
+
+
+/* NOTIFICATIONS */
+
+
+.settings-options {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.settings-option {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        16px
+        0;
+
+    border-bottom:
+        1px solid
+        #eeeeee;
+
+    cursor: pointer;
+}
+
+
+.settings-option:first-child {
+    padding-top: 0;
+}
+
+
+.settings-option:last-child {
+    border-bottom: 0;
+}
+
+
+.settings-option div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.settings-option strong {
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.settings-option span {
+    color: #888;
+
+    font-size: 11px;
+}
+
+
+.settings-option input {
+    width: 16px;
+    height: 16px;
+
+    cursor: pointer;
+}
+
+
+/* SAVE */
+
+
+.settings-actions {
+    min-height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 18px;
+
+    padding:
+        16px
+        30px;
+}
+
+
+.settings-actions button {
+    padding:
+        11px
+        22px;
+
+    border:
+        1px solid
+        black;
+
+    background: black;
+
+    color: white;
+
+    font: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.settings-actions button:hover {
+    opacity: 0.82;
+}
+
+
+.settings-saved {
+    font-size: 11px;
+
+    color: #555;
+}
+
+
+/* RESPONSIVE */
+
+
+@media (max-width: 700px) {
+
+    .settings-page {
+        padding:
+            30px
+            20px
+            70px;
+    }
+
+
+    .settings-section {
+        grid-template-columns:
+            1fr;
+
+        gap: 25px;
+
+        padding: 22px;
+    }
+
+
+    .settings-section-title p {
+        max-width: none;
+    }
+
+
+    .settings-actions {
+        padding:
+            16px
+            22px;
+    }
+
+}
