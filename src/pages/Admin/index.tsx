@@ -14,9 +14,17 @@ import {
     useProducts,
 } from "../../store/ProductContext";
 
+import AdminSummary
+    from "../../components/AdminSummary";
+
 type AdminSection =
+    | "summary"
     | "products"
-    | "orders";
+    | "orders"
+    | "customers"
+    | "messages"
+    | "blog"
+    | "discounts";
 
 
 const mockOrders = [
@@ -45,13 +53,10 @@ const mockOrders = [
 
 function Admin() {
 
-    const [
-        section,
-        setSection,
-    ] = useState<AdminSection>(
-        "products"
+    const [section, setSection] =
+    useState<AdminSection>(
+        "summary"
     );
-
 
     return (
         <section className="admin-page">
@@ -73,15 +78,26 @@ function Admin() {
 
                     <button
                         className={
+                            section === "summary"
+                                ? "active"
+                                : ""
+                        }
+                        onClick={() =>
+                            setSection("summary")
+                        }
+                    >
+                        Summary
+                    </button>
+
+
+                    <button
+                        className={
                             section === "products"
                                 ? "active"
                                 : ""
                         }
-
                         onClick={() =>
-                            setSection(
-                                "products"
-                            )
+                            setSection("products")
                         }
                     >
                         Products
@@ -94,14 +110,67 @@ function Admin() {
                                 ? "active"
                                 : ""
                         }
-
                         onClick={() =>
-                            setSection(
-                                "orders"
-                            )
+                            setSection("orders")
                         }
                     >
                         Orders
+                    </button>
+
+
+                    <button
+                        className={
+                            section === "customers"
+                                ? "active"
+                                : ""
+                        }
+                        onClick={() =>
+                            setSection("customers")
+                        }
+                    >
+                        Customers
+                    </button>
+
+
+                    <button
+                        className={
+                            section === "messages"
+                                ? "active"
+                                : ""
+                        }
+                        onClick={() =>
+                            setSection("messages")
+                        }
+                    >
+                        Messages
+                    </button>
+
+
+                    <button
+                        className={
+                            section === "blog"
+                                ? "active"
+                                : ""
+                        }
+                        onClick={() =>
+                            setSection("blog")
+                        }
+                    >
+                        Blog
+                    </button>
+
+
+                    <button
+                        className={
+                            section === "discounts"
+                                ? "active"
+                                : ""
+                        }
+                        onClick={() =>
+                            setSection("discounts")
+                        }
+                    >
+                        Discounts
                     </button>
 
                 </nav>
@@ -111,6 +180,9 @@ function Admin() {
 
             <div className="admin-content">
 
+                {section === "summary" && (
+                    <AdminSummary />
+                )}
                 {section === "products" && (
 
                     <ProductsAdmin />
@@ -122,6 +194,33 @@ function Admin() {
 
                     <OrdersAdmin />
 
+                )}
+
+                {section === "customers" && (
+                    <div className="admin-placeholder">
+                        Customers
+                    </div>
+                )}
+
+
+                {section === "messages" && (
+                    <div className="admin-placeholder">
+                        Messages
+                    </div>
+                )}
+
+
+                {section === "blog" && (
+                    <div className="admin-placeholder">
+                        Blog
+                    </div>
+                )}
+
+
+                {section === "discounts" && (
+                    <div className="admin-placeholder">
+                        Discounts
+                    </div>
                 )}
 
             </div>
