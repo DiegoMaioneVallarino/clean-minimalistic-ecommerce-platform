@@ -239,6 +239,25 @@ function AdminProductCreate() {
                         />
                     </label>
 
+                    <label>
+
+                        Stock
+
+                        <input
+                            type="number"
+                            min="0"
+
+                            value={stock}
+
+                            onChange={(event) =>
+                                setStock(
+                                    event.target.value
+                                )
+                            }
+                        />
+
+                    </label>
+
 
                     <div className="admin-edit-actions">
 

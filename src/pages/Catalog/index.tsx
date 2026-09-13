@@ -118,7 +118,7 @@ if (query) {
 
 
     return (
-        <section className="catalog">
+        <section className="catalog motion-slide-up">
 
             <aside className="catalog-sidebar">
 

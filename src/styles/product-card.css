@@ -1,5 +1,17 @@
 .product-card {
-    min-width: 0;
+    transition:
+        transform
+        var(--motion-normal)
+        var(--motion-ease),
+        box-shadow
+        var(--motion-normal)
+        var(--motion-ease);
+}
+
+
+.product-card:hover {
+    transform:
+        translateY(-4px);
 }
 
 .product-card a,
@@ -31,9 +43,13 @@
 
     object-fit: scale-down;
     background: white;
-    transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
+     transition:
+        transform
+        var(--motion-slow)
+        var(--motion-ease),
+        opacity
+        var(--motion-normal)
+        var(--motion-ease);
 }
 .product-card-price {
     display: flex;

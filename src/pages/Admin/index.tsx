@@ -2,9 +2,6 @@ import {
     useState,
 } from "react";
 
-import {
-    products,
-} from "../../services/products";
 
 import "../../styles/admin.css";
 

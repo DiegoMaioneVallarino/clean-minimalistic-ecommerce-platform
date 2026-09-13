@@ -20,13 +20,36 @@ function ProductGrid({
         <div
             className={`product-grid columns-${columns}`}
         >
-            {products.map((product) => (
-                <ProductCard
-                    key={product.id}
-                    product={product}
-                    hoverMode={hoverMode}
-                />
-            ))}
+            {products.map(
+    (
+        product,
+        index
+    ) => (
+
+        <div
+            key={product.id}
+
+            className="
+                product-grid-item
+                motion-slide-up
+            "
+
+            style={{
+                animationDelay:
+                    `${index * 45}ms`
+            }}
+        >
+
+            <ProductCard
+                product={
+                    product
+                }
+            />
+
+        </div>
+
+    )
+)}
         </div>
     );
 }

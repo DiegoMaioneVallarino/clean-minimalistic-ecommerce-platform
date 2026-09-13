@@ -268,7 +268,7 @@ function AdminSummary() {
 
 
     return (
-        <section className="admin-summary">
+        <section className="admin-summary motion-fade-in">
 
             <div className="admin-summary-heading">
 
