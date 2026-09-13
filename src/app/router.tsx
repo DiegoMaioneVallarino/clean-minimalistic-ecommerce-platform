@@ -22,6 +22,9 @@ import Orders from "../pages/Orders";
 import Settings from "../pages/Settings";
 import Profile from "../pages/Profile";
 
+import MyCoupons
+    from "../pages/MyCoupons";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -110,6 +113,10 @@ const router = createBrowserRouter([
                         <AdminProductEdit />
                     </RequireAdmin>
                 ),
+            },
+            {
+                path: "/coupons",
+                element: <MyCoupons />,
             },
             {
                 path: "admin/products/new",

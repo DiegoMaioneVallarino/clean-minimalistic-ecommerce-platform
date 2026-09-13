@@ -137,3 +137,121 @@
 .checkout-item-price strong {
     color: black;
 }
+
+.checkout-coupon {
+    margin-top: 24px;
+
+    padding:
+        20px
+        0;
+
+    border-top:
+        1px solid
+        #e5e5e5;
+
+    border-bottom:
+        1px solid
+        #e5e5e5;
+}
+
+
+.checkout-coupon > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.checkout-coupon-row {
+    display: flex;
+
+    gap: 7px;
+}
+
+
+.checkout-coupon-row input {
+    min-width: 0;
+
+    flex: 1;
+
+    padding:
+        10px
+        11px;
+
+    border:
+        1px solid
+        #ddd;
+
+    outline: none;
+
+    font: inherit;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+}
+
+
+.checkout-coupon-row input:focus {
+    border-color: black;
+}
+
+
+.checkout-coupon-row button {
+    padding:
+        0
+        16px;
+
+    border:
+        1px solid
+        black;
+
+    background:
+        black;
+
+    color:
+        white;
+
+    font: inherit;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+
+.checkout-coupon p {
+    margin:
+        8px
+        0
+        0;
+
+    color: #777;
+
+    font-size: 9px;
+}
+
+
+.checkout-summary-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 14px;
+
+    font-size: 11px;
+}
+
+
+.checkout-summary-discount {
+    color: #d40000;
+}
