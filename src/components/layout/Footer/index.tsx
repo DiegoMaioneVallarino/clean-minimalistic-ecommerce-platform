@@ -30,7 +30,11 @@ function Footer() {
                 <div className="footer-column">
                     <h3>Help</h3>
 
-                    <a href="#">Contact</a>
+                    <NavLink
+                        to="/contact"
+                    >
+                        Contact
+                    </NavLink>
                     <a href="#">Shipping</a>
                     <a href="#">Returns</a>
                 </div>

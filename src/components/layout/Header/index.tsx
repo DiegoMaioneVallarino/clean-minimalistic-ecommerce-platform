@@ -164,6 +164,12 @@ function Header() {
                         <NavLink to="/profile">
                             My Profile
                         </NavLink>
+                        <NavLink
+                            to="/contact"
+                            className="header-user-link"
+                        >
+                            Contact
+                        </NavLink>
 
                         <NavLink to="/orders">
                             My Orders

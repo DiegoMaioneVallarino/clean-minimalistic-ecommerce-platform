@@ -16,6 +16,7 @@ import ProductDetail from "../pages/ProductDetail";
 import Admin from "../pages/Admin";
 import AdminProductEdit from "../pages/AdminProductEdit";
 import AdminProductCreate from "../pages/AdminProductCreate";
+import Contact from "../pages/Contact";
 
 import Orders from "../pages/Orders";
 import Settings from "../pages/Settings";
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
             {
                 path: "settings",
                 element: <Settings />,
+            },
+            {
+                path: "/contact",
+                element: <Contact />,
             },
 
             {
