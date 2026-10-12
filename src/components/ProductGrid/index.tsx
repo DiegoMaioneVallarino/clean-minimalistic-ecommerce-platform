@@ -1,3 +1,4 @@
+
 import type { Product } from "../../types/Product";
 import ProductCard from "../ProductCard";
 
@@ -6,7 +7,6 @@ import "../../styles/product-grid.css";
 type ProductGridProps = {
     products: Product[];
     columns?: 3 | 4 | 6;
-
     hoverMode?: "alternate" | "zoom";
 };
 
@@ -17,39 +17,27 @@ function ProductGrid({
 }: ProductGridProps) {
 
     return (
-        <div
-            className={`product-grid columns-${columns}`}
-        >
-            {products.map(
-    (
-        product,
-        index
-    ) => (
+        <div className={`product-grid columns-${columns}`}>
 
-        <div
-            key={product.id}
+            {products.map((product, index) => (
 
-            className="
-                product-grid-item
-                motion-slide-up
-            "
+                <div
+                    key={product.id}
+                    className="product-grid-item motion-slide-up"
+                    style={{
+                        animationDelay: `${Math.min(index, 12) * 45}ms`
+                    }}
+                >
 
-            style={{
-                animationDelay:
-                    `${index * 45}ms`
-            }}
-        >
+                    <ProductCard
+                        product={product}
+                        hoverMode={hoverMode}
+                    />
 
-            <ProductCard
-                product={
-                    product
-                }
-            />
+                </div>
 
-        </div>
+            ))}
 
-    )
-)}
         </div>
     );
 }
