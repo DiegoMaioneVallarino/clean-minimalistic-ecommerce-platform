@@ -219,4 +219,50 @@
 
     font-size: inherit;
     font-weight: inherit;
+}/* SALE SELECTION - COMPACT PRODUCT IMAGES */
+
+.sale-selection .product-card-images {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 3 / 4;
+
+    overflow: hidden;
+    background: #fff;
+}
+
+.sale-selection .product-card-images img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Prevent cards from adding extra height */
+
+.sale-selection .product-card {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+}
+
+.sale-selection .sale-selection-slide {
+    height: auto;
+}
+
+/* Reduce bottom spacing */
+
+.sale-selection {
+    padding-bottom: 30px;
+}
+
+@media (max-width: 650px) {
+    .sale-selection {
+        padding-bottom: 20px;
+    }
 }

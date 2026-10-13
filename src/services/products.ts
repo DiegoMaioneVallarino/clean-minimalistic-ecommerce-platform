@@ -17,7 +17,7 @@ import product4Model from "../img/items/4/model.jpg";
 import product5Front from "../img/items/5/front.jpg";
 
 import product6Front from "../img/items/6/front.jpg";
-import product6Back from "../img/items/6/front.jpg";
+import product6Back from "../img/items/6/back.jpg";
 
 import product7Front from "../img/items/7/front.jpg";
 

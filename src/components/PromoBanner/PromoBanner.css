@@ -1,0 +1,147 @@
+
+.promo-banner {
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    overflow: hidden;
+}
+
+.promo-banner-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    max-width: 1600px;
+    min-height: 240px;
+    margin: 0 auto;
+    float: right;
+    color: #111;
+    text-decoration: none;
+}
+
+/* LEFT TEXT */
+
+.promo-banner-content {
+    position: relative;
+    z-index: 2;
+
+    flex: 0 0 45%;
+    padding: 40px clamp(24px, 6vw, 100px);
+}
+
+.promo-banner-eyebrow {
+    display: block;
+    margin-bottom: 13px;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    color: #888;
+}
+
+.promo-banner-content h2 {
+    margin: 0 0 24px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(32px, 3.7vw, 58px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -.035em;
+}
+
+.promo-banner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding-bottom: 8px;
+    border-bottom: 1px solid #111;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+}
+
+.promo-banner-cta span {
+    font-size: 16px;
+    transition: transform 200ms ease;
+}
+
+.promo-banner-link:hover .promo-banner-cta span {
+    transform: translate(4px, -4px);
+}
+
+/* RIGHT IMAGE */
+
+.promo-banner-image {
+    position: absolute;
+    z-index: 1;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+
+    background-image: url("/maison/discountsbg.jpg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+
+    pointer-events: none;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .promo-banner-link {
+        min-height: 210px;
+    }
+
+    .promo-banner-content {
+        flex-basis: 55%;
+    }
+
+    .promo-banner-image {
+        width: 55%;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .promo-banner-link {
+        min-height: 180px;
+    }
+
+    .promo-banner-content {
+        flex-basis: 72%;
+        padding: 25px 20px;
+    }
+
+    .promo-banner-eyebrow {
+        font-size: 8px;
+    }
+
+    .promo-banner-content h2 {
+        font-size: 30px;
+        max-width: 200px;
+    }
+
+    .promo-banner-cta {
+        font-size: 9px;
+    }
+
+    .promo-banner-image {
+        width: 62%;
+        opacity: .65;
+        background-position: right bottom;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .promo-banner-cta span {
+        transition: none;
+    }
+}

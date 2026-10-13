@@ -8,19 +8,15 @@ function Footer() {
 
                 <div className="footer-brand">
                     <NavLink to="/" className="footer-logo">
-                                            <NavLink to="/men">Men</NavLink>
+                                          
 <img
-    src="/maison/logo.png"
+    src="/logo.png"
     alt="Maison Vintage"
     className="footer-logo"
 />
                     </NavLink>
 
-                    <p>
-                        Essential pieces.
-                        <br />
-                        Designed for everyday life.
-                    </p>
+                  
                 </div>
 
                 <div className="footer-column">
@@ -54,7 +50,7 @@ function Footer() {
             </div>
 
             <div className="footer-bottom">
-                <span>© 2026 Minimal</span>
+                <span>© 2026 Maison Vintage</span>
 
                 <div className="footer-legal">
                     <a href="#">Privacy</a>
