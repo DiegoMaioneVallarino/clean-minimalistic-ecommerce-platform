@@ -8,7 +8,12 @@ function Footer() {
 
                 <div className="footer-brand">
                     <NavLink to="/" className="footer-logo">
-                        MINIMAL
+                                            <NavLink to="/men">Men</NavLink>
+<img
+    src="/maison/logo.png"
+    alt="Maison Vintage"
+    className="footer-logo"
+/>
                     </NavLink>
 
                     <p>
