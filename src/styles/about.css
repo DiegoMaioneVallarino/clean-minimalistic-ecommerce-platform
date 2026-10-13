@@ -1,0 +1,591 @@
+
+.maison-about {
+    --maison-ink: #171717;
+    --maison-paper: #f8f7f4;
+    --maison-line: #dcdad5;
+
+    background: var(--maison-paper);
+    color: var(--maison-ink);
+    overflow: clip;
+}
+
+.maison-about *,
+.maison-about *::before,
+.maison-about *::after {
+    box-sizing: border-box;
+}
+
+.maison-about img {
+    display: block;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.maison-about a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.maison-about button {
+    font: inherit;
+}
+
+.maison-hero {
+    min-height: min(850px, 90svh);
+    display: grid;
+    grid-template-columns: 49% 51%;
+}
+
+.maison-hero-image {
+    position: relative;
+    min-height: 620px;
+    overflow: hidden;
+    background: #d9d5ce;
+}
+
+.maison-hero-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.maison-image-index {
+    position: absolute;
+    bottom: 24px;
+    left: 28px;
+    padding: 8px 10px;
+    background: rgba(248, 247, 244, .92);
+    font-size: 10px;
+    letter-spacing: .14em;
+}
+
+.maison-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 32px clamp(28px, 5vw, 90px) 48px;
+}
+
+.maison-eyebrow,
+.maison-section-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .14em;
+}
+
+.maison-hero h1,
+.maison-story h2,
+.maison-archive h2,
+.maison-detail h2,
+.maison-visit h2 {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    letter-spacing: -.075em;
+    line-height: .96;
+}
+
+.maison-hero h1 {
+    font-size: clamp(46px, 5.7vw, 104px);
+}
+
+.maison-about em {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: -.065em;
+}
+
+.maison-hero-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.maison-hero-bottom p,
+.maison-story-copy p,
+.maison-archive-heading p,
+.maison-detail-copy p {
+    max-width: 420px;
+    margin: 0;
+    font-size: clamp(14px, 1.1vw, 16px);
+    line-height: 1.8;
+    color: #55534f;
+}
+
+.maison-hero-bottom a,
+.maison-detail-copy a,
+.maison-address a {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 1px solid currentColor;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    transition: opacity .2s ease;
+}
+
+.maison-hero-bottom a:hover,
+.maison-detail-copy a:hover,
+.maison-address a:hover {
+    opacity: .55;
+}
+
+.maison-story,
+.maison-archive,
+.maison-visit {
+    padding: 35px clamp(22px, 5vw, 88px) 120px;
+}
+
+.maison-section-label {
+    padding-top: 18px;
+    border-top: 1px solid var(--maison-ink);
+}
+
+.maison-story-layout {
+    display: grid;
+    grid-template-columns: 1fr .8fr;
+    gap: clamp(40px, 9vw, 160px);
+    align-items: center;
+    padding-top: 95px;
+}
+
+.maison-overline {
+    display: block;
+    margin-bottom: 26px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .17em;
+}
+
+.maison-story h2,
+.maison-archive h2,
+.maison-detail h2,
+.maison-visit h2 {
+    font-size: clamp(48px, 6.8vw, 110px);
+}
+
+.maison-story-copy p {
+    margin-top: 25px;
+}
+
+.maison-story-copy p:first-of-type {
+    margin-top: 45px;
+}
+
+.maison-story-figure {
+    margin: 0;
+}
+
+.maison-story-figure img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.maison-story-figure figcaption {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 12px;
+    font-size: 10px;
+    letter-spacing: .13em;
+}
+
+.maison-statement {
+    padding: 110px 6vw;
+    background: #191919;
+    color: #f8f7f4;
+    text-align: center;
+}
+
+.maison-statement > span {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 10px;
+    letter-spacing: .2em;
+}
+
+.maison-statement p {
+    margin: 0;
+    font-size: clamp(28px, 5.3vw, 88px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -.065em;
+}
+
+.maison-archive {
+    padding-top: 85px;
+}
+
+.maison-archive-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 85px 0 50px;
+}
+
+.maison-archive-heading p {
+    max-width: 280px;
+}
+
+.maison-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--maison-line);
+}
+
+.maison-filters button {
+    padding: 5px 0;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: none;
+    color: #85817c;
+    cursor: pointer;
+    font-size: 11px;
+    letter-spacing: .08em;
+}
+
+.maison-filters button.is-active {
+    color: var(--maison-ink);
+    border-bottom-color: var(--maison-ink);
+}
+
+.maison-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.maison-photo {
+    display: block;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.maison-photo img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    transition: filter .3s ease, transform .45s ease;
+}
+
+.maison-photo:nth-child(7n + 1) {
+    grid-column: span 2;
+}
+
+.maison-photo:nth-child(7n + 1) img {
+    aspect-ratio: 1.53 / 1;
+}
+
+.maison-photo:hover img {
+    filter: brightness(.91);
+}
+
+.maison-photo-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0 18px;
+    font-size: 10px;
+    letter-spacing: .12em;
+}
+
+.maison-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 640px;
+    background: #eae6df;
+}
+
+.maison-detail-image {
+    min-height: 560px;
+}
+
+.maison-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.maison-detail-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 70px clamp(30px, 7vw, 120px);
+}
+
+.maison-detail-copy .maison-overline {
+    margin: 0;
+}
+
+.maison-visit {
+    padding-top: 100px;
+}
+
+.maison-visit-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding-top: 90px;
+}
+
+.maison-address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    padding-top: 15px;
+}
+
+.maison-address > span {
+    font-size: 10px;
+    letter-spacing: .15em;
+}
+
+.maison-address address {
+    margin-bottom: 16px;
+    font-size: clamp(22px, 3vw, 42px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -.045em;
+}
+
+.maison-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 24px clamp(22px, 5vw, 88px);
+    border-top: 1px solid var(--maison-line);
+    font-size: 10px;
+    letter-spacing: .12em;
+}
+
+/* Photo viewer */
+
+.maison-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 75px;
+    background: rgba(10, 10, 10, .96);
+    color: white;
+}
+
+.maison-lightbox > img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.maison-lightbox button {
+    position: absolute;
+    z-index: 1;
+    border: 0;
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.maison-lightbox-close {
+    top: 15px;
+    right: 25px;
+    font-size: 40px !important;
+}
+
+.maison-lightbox-prev {
+    left: 20px;
+}
+
+.maison-lightbox-next {
+    right: 20px;
+}
+
+.maison-lightbox-counter {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    letter-spacing: .15em;
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+    .maison-hero {
+        min-height: 0;
+    }
+
+    .maison-hero-image {
+        min-height: 550px;
+    }
+
+    .maison-hero-content {
+        padding: 30px;
+    }
+
+    .maison-hero h1 {
+        font-size: clamp(40px, 5.8vw, 70px);
+    }
+
+    .maison-photo-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .maison-story-layout {
+        gap: 50px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .maison-hero {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .maison-hero-image {
+        min-height: 0;
+        height: 55svh;
+        max-height: 580px;
+    }
+
+    .maison-hero-content {
+        gap: 55px;
+        padding: 28px 22px 65px;
+    }
+
+    .maison-hero h1 {
+        font-size: clamp(44px, 11vw, 76px);
+    }
+
+    .maison-hero-bottom {
+        gap: 24px;
+    }
+
+    .maison-story,
+    .maison-archive,
+    .maison-visit {
+        padding: 30px 22px 80px;
+    }
+
+    .maison-story-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding-top: 65px;
+    }
+
+    .maison-story h2,
+    .maison-archive h2,
+    .maison-detail h2,
+    .maison-visit h2 {
+        font-size: clamp(47px, 11vw, 78px);
+    }
+
+    .maison-statement {
+        padding: 80px 20px;
+    }
+
+    .maison-statement p {
+        font-size: clamp(26px, 6.4vw, 48px);
+    }
+
+    .maison-archive-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 65px 0 35px;
+    }
+
+    .maison-photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .maison-photo:nth-child(7n + 1) {
+        grid-column: span 2;
+    }
+
+    .maison-photo-caption {
+        font-size: 9px;
+    }
+
+    .maison-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .maison-detail-image {
+        min-height: 0;
+        height: 440px;
+    }
+
+    .maison-detail-copy {
+        padding: 70px 22px;
+    }
+
+    .maison-visit-layout {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        padding-top: 65px;
+    }
+
+    .maison-lightbox {
+        padding: 70px 15px;
+    }
+
+    .maison-lightbox-prev {
+        left: 5px;
+    }
+
+    .maison-lightbox-next {
+        right: 5px;
+    }
+}
+
+@media (max-width: 380px) {
+    .maison-eyebrow,
+    .maison-section-label {
+        font-size: 8px;
+    }
+
+    .maison-hero h1 {
+        font-size: 40px;
+    }
+
+    .maison-filters {
+        gap: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .maison-about *,
+    .maison-about *::before,
+    .maison-about *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}

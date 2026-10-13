@@ -1,4 +1,6 @@
 import Hero from "../../components/Hero";
+import HomeHero from "../../components/HomeHero";
+
 import ModelLooks from "../../components/ModelLooks";
 import FeaturedProducts from "../../components/FeaturedProducts";
 import PromoBanner from "../../components/PromoBanner";
@@ -9,15 +11,18 @@ import "../../styles/home.css";
 function Home() {
     return (
         <>
-            <Hero />
+         <NewArrivals />
+
+            <HomeHero />
 
             <ModelLooks />
 
             <FeaturedProducts />
 
             <PromoBanner />
-
-            <NewArrivals />
+            
+            <Hero />
+           
         </>
     );
 }

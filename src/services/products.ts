@@ -16,6 +16,15 @@ import product4Model from "../img/items/4/model.jpg";
 
 import product5Front from "../img/items/5/front.jpg";
 
+import product6Front from "../img/items/6/front.jpg";
+import product6Back from "../img/items/6/front.jpg";
+
+import product7Front from "../img/items/7/front.jpg";
+
+import product8Front from "../img/items/8/front.jpg";
+
+import product9Front from "../img/items/9/front.jpg";
+import product10Front from "../img/items/10/front.png";
 
 export const products: Product[] = [
     {
@@ -121,6 +130,75 @@ export const products: Product[] = [
     stock:1,
     images: {
         front: product5Front,
+    },
+
+    description: "New collection piece.",
+},
+{
+    id: 6,
+    name: "Camisa de dragón 2000s",
+    price: 799,
+    discount: 30,
+    category: "men",
+    stock:1,
+    images: {
+        front: product6Front,
+        back: product6Back
+    },
+
+    description: "New collection piece.",
+},
+{
+    id: 7,
+    name: "Bolso Chanel 90s",
+    price: 2899,
+    discount: 30,
+    category: "women",
+    stock:1,
+    images: {
+        front: product7Front,
+    },
+
+    description: "New collection piece.",
+},
+{
+    id: 8,
+    name: "Suéter 90s Rare",
+    price: 2899,
+    discount: 30,
+    category: "women",
+    stock:1,
+    images: {
+        front: product8Front,
+    },
+
+    description: "New collection piece.",
+}
+
+,
+{
+    id: 9,
+    name: "Vestido 90s",
+    price: 899,
+    discount: 30,
+    category: "women",
+    stock:1,
+    images: {
+        front: product9Front,
+    },
+
+    description: "New collection piece.",
+}
+,
+{
+    id: 10,
+    name: "Bomber barroca de seda",
+    price: 1899,
+    discount: 10,
+    category: "men",
+    stock:1,
+    images: {
+        front: product10Front,
     },
 
     description: "New collection piece.",

@@ -17,11 +17,10 @@ import Admin from "../pages/Admin";
 import AdminProductEdit from "../pages/AdminProductEdit";
 import AdminProductCreate from "../pages/AdminProductCreate";
 import Contact from "../pages/Contact";
-
+import About from "../pages/About";
 import Orders from "../pages/Orders";
 import Settings from "../pages/Settings";
 import Profile from "../pages/Profile";
-
 import MyCoupons
     from "../pages/MyCoupons";
 
@@ -54,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: "catalog",
                 element: <Catalog />,
+            },
+            {
+                path: "about",
+                element: <About />,
             },
 
             {

@@ -1,3 +1,4 @@
+
 import {
     createContext,
     useContext,
@@ -7,27 +8,50 @@ import {
 
 import type { Product } from "../types/Product";
 
-type CartItem = {
+export type CartVariant = {
+    color?: string;
+    size?: string;
+};
+
+export type CartItem = {
+    key: string;
     product: Product;
     quantity: number;
+    color?: string;
+    size?: string;
 };
 
 type CartContextType = {
     items: CartItem[];
 
-    addToCart: (product: Product) => void;
-    removeFromCart: (productId: number) => void;
-    increaseQuantity: (productId: number) => void;
-    decreaseQuantity: (productId: number) => void;
+    addToCart: (
+        product: Product,
+        variant?: CartVariant
+    ) => void;
+
+    removeFromCart: (key: string) => void;
+    increaseQuantity: (key: string) => void;
+    decreaseQuantity: (key: string) => void;
 };
 
-const CartContext = createContext<CartContextType | undefined>(
-    undefined
-);
+const CartContext = createContext<
+    CartContextType | undefined
+>(undefined);
 
 type CartProviderProps = {
     children: ReactNode;
 };
+
+export function createCartItemKey(
+    productId: number,
+    variant: CartVariant = {}
+): string {
+    return JSON.stringify([
+        productId,
+        variant.color ?? null,
+        variant.size ?? null,
+    ]);
+}
 
 export function CartProvider({
     children,
@@ -35,18 +59,23 @@ export function CartProvider({
 
     const [items, setItems] = useState<CartItem[]>([]);
 
-    function addToCart(product: Product) {
+    function addToCart(
+        product: Product,
+        variant: CartVariant = {}
+    ) {
+        const key = createCartItemKey(
+            product.id,
+            variant
+        );
 
         setItems((currentItems) => {
-
             const existingItem = currentItems.find(
-                (item) => item.product.id === product.id
+                (item) => item.key === key
             );
 
             if (existingItem) {
-
                 return currentItems.map((item) =>
-                    item.product.id === product.id
+                    item.key === key
                         ? {
                             ...item,
                             quantity: item.quantity + 1,
@@ -58,27 +87,28 @@ export function CartProvider({
             return [
                 ...currentItems,
                 {
+                    key,
                     product,
                     quantity: 1,
+                    color: variant.color,
+                    size: variant.size,
                 },
             ];
         });
     }
 
-    function removeFromCart(productId: number) {
-
+    function removeFromCart(key: string) {
         setItems((currentItems) =>
             currentItems.filter(
-                (item) => item.product.id !== productId
+                (item) => item.key !== key
             )
         );
     }
 
-    function increaseQuantity(productId: number) {
-
+    function increaseQuantity(key: string) {
         setItems((currentItems) =>
             currentItems.map((item) =>
-                item.product.id === productId
+                item.key === key
                     ? {
                         ...item,
                         quantity: item.quantity + 1,
@@ -88,12 +118,11 @@ export function CartProvider({
         );
     }
 
-    function decreaseQuantity(productId: number) {
-
+    function decreaseQuantity(key: string) {
         setItems((currentItems) =>
             currentItems
                 .map((item) =>
-                    item.product.id === productId
+                    item.key === key
                         ? {
                             ...item,
                             quantity: item.quantity - 1,
@@ -120,7 +149,6 @@ export function CartProvider({
 }
 
 export function useCart() {
-
     const context = useContext(CartContext);
 
     if (!context) {

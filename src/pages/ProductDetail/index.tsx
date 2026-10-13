@@ -109,7 +109,10 @@ function ProductDetail() {
         return;
     }
 
-    addToCart(product);
+    addToCart(product, {
+    color: product.colors?.[selectedColor]?.name,
+    size: selectedSize ?? undefined,
+});
 
     if (productImageRef.current) {
         flyToCart(productImageRef.current);

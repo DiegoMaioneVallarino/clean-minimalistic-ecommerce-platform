@@ -255,3 +255,12 @@
 .checkout-summary-discount {
     color: #d40000;
 }
+
+
+
+.checkout-item-variant {
+    margin: 5px 0;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+}

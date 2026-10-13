@@ -234,13 +234,10 @@ function Checkout() {
                 {items.map(
                     (item) => (
 
-                        <div
-                            key={
-                                item.product.id
-                            }
-
-                            className="checkout-item"
-                        >
+                       <div
+    key={item.key}
+    className="checkout-item"
+>
 
                             <img
                                 src={
@@ -264,7 +261,14 @@ function Checkout() {
                                             .name
                                     }
                                 </p>
-
+                            {(item.color || item.size) && (
+                                <p className="checkout-item-variant">
+                                    {[
+                                        item.color,
+                                        item.size,
+                                    ].filter(Boolean).join(" / ")}
+                                </p>
+                            )}
                                 <span>
                                     Quantity:
                                     {" "}

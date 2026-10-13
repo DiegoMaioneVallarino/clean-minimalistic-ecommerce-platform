@@ -143,3 +143,11 @@
 .cart-discounted-price {
     color: black;
 }
+
+
+.cart-item-variant {
+    margin: 7px 0 10px;
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+}
