@@ -73,8 +73,29 @@ const navigation = [
     { label: "Men", path: "/men" },
     { label: "Women", path: "/women" },
     { label: "Sales", path: "/sales" },
-    { label: "Catalog", path: "/catalog" },
-      { label: "Nosotros", path: "/about" },
+    { label: "Nosotros", path: "/about" },
+];
+
+const clothingCategories = [
+    { label: "All Clothing", path: "/catalog" },
+    { label: "Jackets & Coats", path: "/catalog?type=jackets" },
+    { label: "Pants & Denim", path: "/catalog?type=pants" },
+    { label: "Shirts", path: "/catalog?type=shirts" },
+    { label: "T-Shirts & Tops", path: "/catalog?type=tops" },
+    { label: "Dresses & Skirts", path: "/catalog?type=dresses" },
+    { label: "Knitwear", path: "/catalog?type=knitwear" },
+    { label: "Accessories", path: "/catalog?type=accessories" },
+];
+
+const styleCategories = [
+    { label: "Western Revival", path: "/catalog?style=western" },
+    { label: "Racing Archives", path: "/catalog?style=racing" },
+    { label: "Seventies Fever", path: "/catalog?style=groovy" },
+    { label: "Y2K Archives", path: "/catalog?style=y2k" },
+    { label: "Grunge & Alternative", path: "/catalog?style=grunge" },
+    { label: "Retro Sportswear", path: "/catalog?style=sportswear" },
+    { label: "Biker & Leather", path: "/catalog?style=biker" },
+    { label: "Preppy Vintage", path: "/catalog?style=preppy" },
 ];
 
 function Header() {
@@ -201,23 +222,87 @@ function Header() {
 </NavLink>
                 </div>
 
-                <nav
-                    className="main-nav"
-                    aria-label="Main navigation"
-                >
-                    {navigation.map((link) => (
-                        <NavLink
-                            key={link.path}
-                            to={link.path}
-                            end={link.path === "/"}
-                            className={({ isActive }) =>
-                                isActive ? "nav-active" : ""
-                            }
-                        >
-                            {link.label}
-                        </NavLink>
-                    ))}
-                </nav>
+               <nav className="main-nav" aria-label="Main navigation">
+
+    {navigation.slice(0, 3).map((link) => (
+        <NavLink
+            key={link.path}
+            to={link.path}
+            end={link.path === "/"}
+            className={({ isActive }) =>
+                isActive ? "nav-active" : ""
+            }
+        >
+            {link.label}
+        </NavLink>
+    ))}
+
+    <details
+        className="catalog-menu"
+        key={`${location.pathname}${location.search}`}
+    >
+        <summary
+            className={
+                location.pathname === "/catalog"
+                    ? "catalog-trigger nav-active"
+                    : "catalog-trigger"
+            }
+        >
+            Catalog
+            <span className="catalog-chevron">⌄</span>
+        </summary>
+
+        <div className="catalog-mega-menu">
+
+            <div className="catalog-mega-column">
+                <h3>SHOP BY CLOTHING</h3>
+
+                {clothingCategories.map((category) => (
+                    <NavLink
+                        key={category.path}
+                        to={category.path}
+                    >
+                        {category.label}
+                    </NavLink>
+                ))}
+            </div>
+
+            <div className="catalog-mega-column">
+                <h3>SHOP BY STYLE</h3>
+
+                {styleCategories.map((category) => (
+                    <NavLink
+                        key={category.path}
+                        to={category.path}
+                    >
+                        {category.label}
+                    </NavLink>
+                ))}
+            </div>
+
+            <div className="catalog-mega-footer">
+                <span>CURATED VINTAGE / EST. 2018</span>
+                <NavLink to="/catalog">
+                    EXPLORE ALL PIECES ↗
+                </NavLink>
+            </div>
+
+        </div>
+    </details>
+
+    {navigation.slice(3).map((link) => (
+        <NavLink
+            key={link.path}
+            to={link.path}
+            className={({ isActive }) =>
+                isActive ? "nav-active" : ""
+            }
+        >
+            {link.label}
+        </NavLink>
+    ))}
+
+</nav>
 
                 <div className="header-actions">
                     <button
@@ -366,15 +451,41 @@ function Header() {
                     id="header-mobile-nav"
                     aria-label="Mobile navigation"
                 >
-                    {navigation.map((link) => (
-                        <NavLink
-                            key={link.path}
-                            to={link.path}
-                            end={link.path === "/"}
-                        >
-                            {link.label}
-                        </NavLink>
-                    ))}
+                   {navigation.map((link) => (
+    <NavLink
+        key={link.path}
+        to={link.path}
+        end={link.path === "/"}
+    >
+        {link.label}
+    </NavLink>
+))}
+
+<details className="mobile-catalog-group">
+    <summary>Shop by Clothing</summary>
+
+    {clothingCategories.map((category) => (
+        <NavLink
+            key={category.path}
+            to={category.path}
+        >
+            {category.label}
+        </NavLink>
+    ))}
+</details>
+
+<details className="mobile-catalog-group">
+    <summary>Shop by Style</summary>
+
+    {styleCategories.map((category) => (
+        <NavLink
+            key={category.path}
+            to={category.path}
+        >
+            {category.label}
+        </NavLink>
+    ))}
+</details>
 
                     <div className="mobile-nav-divider" />
 
@@ -392,9 +503,7 @@ function Header() {
                 </nav>
             )}
 
-            <div className="header-bottom-strip">
-                CURATED VINTAGE CLOTHING
-            </div>
+            
         </header>
     );
 }
