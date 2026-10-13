@@ -21,3 +21,42 @@
     font-size: 32px;
     font-weight: 500;
 }
+
+
+/* NEW ARRIVALS FOOTER */
+
+.new-arrivals-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
+}
+
+.new-arrivals-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #111;
+
+    color: #111;
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+
+    transition:
+        gap 180ms ease,
+        opacity 180ms ease;
+}
+
+.new-arrivals-link:hover {
+    gap: 26px;
+    opacity: .65;
+}
+
+.new-arrivals-link span {
+    font-size: 16px;
+}
