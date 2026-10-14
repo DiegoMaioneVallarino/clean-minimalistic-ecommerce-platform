@@ -179,33 +179,26 @@ function Profile() {
 
 
                     <NavLink
-                        to="/orders"
-                        className="profile-section-card"
-                    >
+    to="/addresses"
+    className="profile-section-card"
+>
+    <div>
+        <span className="profile-section-label">
+            Delivery
+        </span>
 
-                        <div>
+        <h3>My Addresses</h3>
 
-                            <span className="profile-section-label">
-                                Purchases
-                            </span>
+        <p>
+            Manage your saved shipping
+            addresses and default delivery location.
+        </p>
+    </div>
 
-                            <h3>
-                                My Orders
-                            </h3>
-
-                            <p>
-                                View your order history
-                                and delivery status.
-                            </p>
-
-                        </div>
-
-
-                        <span className="profile-arrow">
-                            →
-                        </span>
-
-                    </NavLink>
+    <span className="profile-arrow">
+        →
+    </span>
+</NavLink>
 
 
                     <NavLink

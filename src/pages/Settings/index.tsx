@@ -3,9 +3,9 @@ import {
 } from "react";
 
 import {
-    Navigate
+    Navigate,
+    NavLink
 } from "react-router-dom";
-
 import {
     useAuth
 } from "../../store/AuthContext";
@@ -316,7 +316,45 @@ function Settings() {
 
                 </section>
 
+<section className="settings-section">
 
+    <div className="settings-section-title">
+
+        <h2>Shipping Addresses</h2>
+
+        <p>
+            Manage your saved delivery addresses
+            and choose your default shipping location.
+        </p>
+
+    </div>
+
+    <NavLink
+        to="/addresses"
+        className="settings-address-link"
+    >
+        <div className="settings-address-icon">
+            <span aria-hidden="true">⌖</span>
+        </div>
+
+        <div className="settings-address-info">
+            <strong>My Addresses</strong>
+
+            <span>
+                Add, edit and manage your
+                shipping addresses.
+            </span>
+        </div>
+
+        <span
+            className="settings-address-arrow"
+            aria-hidden="true"
+        >
+            →
+        </span>
+    </NavLink>
+
+</section>
                 <div className="settings-actions">
 
                     {saved && (

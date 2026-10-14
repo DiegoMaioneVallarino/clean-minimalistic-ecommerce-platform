@@ -12,11 +12,13 @@ import { AuthProvider } from "./store/AuthContext";
 import { ProductProvider } from "./store/ProductContext";
 import { ShoppingHistoryProvider } from "./store/ShoppingHistoryContext";
 import { ReviewsProvider } from "./store/ReviewsContext";
+import { AddressProvider } from "./store/AddressContext";
+
 createRoot(
     document.getElementById("root")!
 ).render(
     <StrictMode>
-        <AuthProvider>
+        <AuthProvider> <AddressProvider>
             <ProductProvider>
                 <CartProvider>
                     <ShoppingHistoryProvider>
@@ -26,6 +28,7 @@ createRoot(
                     </ShoppingHistoryProvider>
                 </CartProvider>
             </ProductProvider>
+             </AddressProvider>
         </AuthProvider>
     </StrictMode>
 );

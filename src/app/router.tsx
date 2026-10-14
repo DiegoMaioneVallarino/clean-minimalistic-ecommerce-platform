@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import MainLayout from "../components/layout/MainLayout";
 import RequireAdmin from "../components/RequireAdmin";
-
+import Addresses from "../pages/Addresses";
 import Home from "../pages/Home";
 import Men from "../pages/Men";
 import Women from "../pages/Women";
@@ -79,7 +79,10 @@ const router = createBrowserRouter([
             {
                 path: "settings",
                 element: <Settings />,
-            },
+            },{
+    path: "addresses",
+    element: <Addresses />,
+},
             {
                 path: "/contact",
                 element: <Contact />,

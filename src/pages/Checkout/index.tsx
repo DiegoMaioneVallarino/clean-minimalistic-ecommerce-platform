@@ -1,6 +1,7 @@
-import {
-    useState
-} from "react";
+import { useEffect, useState } from "react";
+import { useAuth } from "../../store/AuthContext";
+import { useAddresses } from "../../store/AddressContext";
+import AddressBook from "../../components/AddressBook";
 
 import { useCart } from "../../store/CartContext";
 import "../../styles/checkout.css";
@@ -38,7 +39,29 @@ function Checkout() {
         setCouponMessage
     ] = useState("");
 
+const { user } = useAuth();
 
+const { addresses, defaultAddress } = useAddresses();
+
+const [selectedAddressId, setSelectedAddressId] =
+    useState<string | null>(null);
+
+useEffect(() => {
+    if (!user) {
+        setSelectedAddressId(null);
+        return;
+    }
+
+    setSelectedAddressId((current) =>
+        current && addresses.some((address) => address.id === current)
+            ? current
+            : defaultAddress?.id ?? null
+    );
+}, [user?.email, addresses, defaultAddress?.id]);
+
+const selectedAddress =
+    addresses.find((address) => address.id === selectedAddressId)
+    ?? defaultAddress;
     const subtotal = items.reduce(
         (sum, item) =>
             sum +
@@ -141,44 +164,52 @@ function Checkout() {
 
 
                 <div className="checkout-section">
+    <h2>Shipping</h2>
 
-                    <h2>
-                        Shipping
-                    </h2>
+    {user ? (
+        <>
+            <AddressBook
+                selectedId={selectedAddress?.id ?? null}
+                onSelect={setSelectedAddressId}
+            />
 
+            {selectedAddress && (
+                <div className="checkout-selected-address">
+                    <strong>Delivering to:</strong>
 
-                    <input
-                        type="text"
-
-                        placeholder="Full name"
-                    />
-
-
-                    <input
-                        type="text"
-
-                        placeholder="Address"
-                    />
-
-
-                    <div className="checkout-row">
-
-                        <input
-                            type="text"
-
-                            placeholder="City"
-                        />
-
-
-                        <input
-                            type="text"
-
-                            placeholder="Postal code"
-                        />
-
-                    </div>
-
+                    <p>
+                        {selectedAddress.recipient}
+                        {" — "}
+                        {selectedAddress.street}
+                        {" "}
+                        {selectedAddress.exteriorNumber},
+                        {" "}
+                        {selectedAddress.city},
+                        {" "}
+                        {selectedAddress.state}
+                        {" "}
+                        {selectedAddress.postalCode}
+                    </p>
                 </div>
+            )}
+        </>
+    ) : (
+        <>
+            <p>
+                Sign in to use your saved addresses,
+                or enter your shipping information below.
+            </p>
+
+            <input type="text" placeholder="Full name" />
+            <input type="text" placeholder="Address" />
+
+            <div className="checkout-row">
+                <input type="text" placeholder="City" />
+                <input type="text" placeholder="Postal code" />
+            </div>
+        </>
+    )}
+</div>
 
 
                 <div className="checkout-section">
