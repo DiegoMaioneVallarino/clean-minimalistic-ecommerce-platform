@@ -24,6 +24,10 @@ import Profile from "../pages/Profile";
 import MyCoupons
     from "../pages/MyCoupons";
 import Wishlist from "../pages/Wishlist";
+
+import ProductRequests from "../pages/ProductRequests";
+
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -70,7 +74,10 @@ const router = createBrowserRouter([
             {
                 path: "login",
                 element: <Login />,
-            },
+            },{
+    path: "requests",
+    element: <ProductRequests />,
+},
 
             {
                 path: "register",

@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 
 import { products } from "../../services/products";
 import ProductCard from "../../components/ProductCard";
-
+import ProductRequestBanner from "../../components/ProductRequestBanner";
 import "../../styles/catalog.css";
 
 type PriceOrder =
@@ -229,7 +229,7 @@ function Catalog() {
 
     return (
         <section className="catalog-page motion-slide-up">
-
+<ProductRequestBanner />
             {/* HORIZONTAL STYLE NAVIGATION */}
 
             <div className="catalog-style-section">

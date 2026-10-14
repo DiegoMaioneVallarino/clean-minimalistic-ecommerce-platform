@@ -14,7 +14,7 @@ import { ShoppingHistoryProvider } from "./store/ShoppingHistoryContext";
 import { ReviewsProvider } from "./store/ReviewsContext";
 import { AddressProvider } from "./store/AddressContext";
 import { OrdersProvider } from "./store/OrdersContext";
-
+import { ProductRequestsProvider } from "./store/ProductRequestsContext";
 createRoot(
     document.getElementById("root")!
 ).render(
@@ -25,8 +25,10 @@ createRoot(
                     <ShoppingHistoryProvider>
                       <ReviewsProvider>
                             <OrdersProvider>
-                        <RouterProvider router={router} />
-                           </OrdersProvider>
+    <ProductRequestsProvider>
+        <RouterProvider router={router} />
+    </ProductRequestsProvider>
+</OrdersProvider>
                         </ReviewsProvider>  
                     </ShoppingHistoryProvider>
                 </CartProvider>
