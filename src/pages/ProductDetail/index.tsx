@@ -12,6 +12,7 @@ import { useCart } from "../../store/CartContext";
 import { useShoppingHistory } from "../../store/ShoppingHistoryContext";
 import { flyToCart } from "../../utils/flyToCart";
 import { getFinalPrice } from "../../utils/getFinalPrice";
+import ProductReviews from "../../components/ProductReviews";
 
 import "../../styles/product-detail.css";
 
@@ -342,7 +343,10 @@ useEffect(() => {
                     </p>
                 </div>
             </section>
-
+<ProductReviews
+    key={product.id}
+    productId={product.id}
+/>
             {activeImage !== null && (
                 <div
                     className="product-lightbox"
