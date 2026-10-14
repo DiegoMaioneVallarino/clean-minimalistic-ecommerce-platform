@@ -1,0 +1,221 @@
+
+.cart-shipments {
+    margin: 48px 0;
+    width: 100%;
+}
+
+.cart-shipments-header {
+    margin-bottom: 24px;
+}
+
+.cart-shipments-eyebrow {
+    color: #999;
+    font-size: 10px;
+    letter-spacing: .16em;
+}
+
+.cart-shipments-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.cart-shipments-header p {
+    color: #888;
+    font-size: 12px;
+}
+
+.cart-shipments-count {
+    padding: 5px 8px;
+    background: #111;
+    color: white;
+    font-size: 10px;
+    letter-spacing: .05em;
+}
+
+.cart-shipment-alert {
+    padding: 18px;
+    margin-bottom: 20px;
+    border: 1px solid #b7d9c3;
+    background: #f2faf5;
+}
+
+.cart-shipment-alert strong {
+    font-size: 13px;
+}
+
+.cart-shipment-alert p {
+    margin: 6px 0 0;
+    color: #477455;
+    font-size: 12px;
+}
+
+.cart-shipments-list {
+    display: grid;
+    gap: 16px;
+}
+
+.cart-shipment-card {
+    padding: 22px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+}
+
+.cart-shipment-top,
+.cart-guide-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart-shipment-top > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.cart-shipment-top strong {
+    font-size: 13px;
+}
+
+.cart-shipment-top div span {
+    color: #999;
+    font-size: 11px;
+}
+
+.cart-shipment-status {
+    padding: 7px 10px;
+    background: #f1f1f1;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.cart-shipment-products {
+    display: grid;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.cart-shipment-product {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.cart-shipment-product img {
+    width: 68px;
+    height: 80px;
+    object-fit: cover;
+    background: #f5f5f5;
+}
+
+.cart-shipment-product > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.cart-shipment-product strong {
+    font-size: 12px;
+}
+
+.cart-shipment-product span {
+    color: #888;
+    font-size: 11px;
+}
+
+.cart-shipment-guide {
+    padding: 17px;
+    background: #f8f8f8;
+}
+
+.cart-guide-heading strong {
+    font-size: 13px;
+}
+
+.cart-guide-heading span {
+    padding: 4px 7px;
+    background: #111;
+    color: #fff;
+    font-size: 9px;
+}
+
+.cart-shipment-guide p {
+    font-size: 12px;
+    color: #666;
+    overflow-wrap: anywhere;
+}
+
+.cart-guide-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.cart-guide-actions a,
+.cart-guide-actions button {
+    padding: 10px 12px;
+    border: 1px solid #111;
+    background: #fff;
+    color: #111;
+    text-decoration: none;
+    font: inherit;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.cart-guide-actions a:hover,
+.cart-guide-actions button:hover {
+    background: #111;
+    color: #fff;
+}
+
+.cart-shipment-waiting {
+    padding: 15px;
+    background: #f8f8f8;
+    color: #888;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.cart-shipments-empty {
+    padding: 35px;
+    border: 1px dashed #ddd;
+    text-align: center;
+}
+
+.cart-shipments-empty p {
+    color: #888;
+    font-size: 13px;
+}
+
+.cart-shipments-empty a,
+.cart-shipments-history {
+    display: inline-block;
+    margin-top: 12px;
+    color: #111;
+    font-size: 11px;
+}
+
+.cart-shipments-history {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .cart-shipment-card {
+        padding: 15px;
+    }
+
+    .cart-shipment-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

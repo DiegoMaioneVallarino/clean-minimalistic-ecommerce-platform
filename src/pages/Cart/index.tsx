@@ -6,6 +6,8 @@ import { getFinalPrice } from "../../utils/getFinalPrice";
 import CartWishlist from "../../components/CartWishlist";
 import RecentlyViewedDrawer from "../../components/RecentlyViewedDrawer";
 import "../../styles/cart.css";
+import CartShipments from "../../components/CartShipments";
+
 
 function Cart() {
     const {
@@ -37,7 +39,7 @@ function Cart() {
 return (
     <section className="cart-page">
         <h1>Cart</h1>
-
+<CartShipments />
         <CartWishlist />
 
         {items.length === 0 ? (

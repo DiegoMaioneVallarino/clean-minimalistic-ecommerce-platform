@@ -13,6 +13,7 @@ import { ProductProvider } from "./store/ProductContext";
 import { ShoppingHistoryProvider } from "./store/ShoppingHistoryContext";
 import { ReviewsProvider } from "./store/ReviewsContext";
 import { AddressProvider } from "./store/AddressContext";
+import { OrdersProvider } from "./store/OrdersContext";
 
 createRoot(
     document.getElementById("root")!
@@ -23,7 +24,9 @@ createRoot(
                 <CartProvider>
                     <ShoppingHistoryProvider>
                       <ReviewsProvider>
+                            <OrdersProvider>
                         <RouterProvider router={router} />
+                           </OrdersProvider>
                         </ReviewsProvider>  
                     </ShoppingHistoryProvider>
                 </CartProvider>
