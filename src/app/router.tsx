@@ -23,7 +23,7 @@ import Settings from "../pages/Settings";
 import Profile from "../pages/Profile";
 import MyCoupons
     from "../pages/MyCoupons";
-
+import Wishlist from "../pages/Wishlist";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -48,7 +48,10 @@ const router = createBrowserRouter([
             {
                 path: "sales",
                 element: <Sales />,
-            },
+            },{
+    path: "wishlist",
+    element: <Wishlist />,
+},
 
             {
                 path: "catalog",

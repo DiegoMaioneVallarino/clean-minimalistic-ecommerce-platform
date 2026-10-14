@@ -13,7 +13,7 @@ import {
 
 import { useCart } from "../../../store/CartContext";
 import { useAuth } from "../../../store/AuthContext";
-
+import { Link } from "react-router-dom";
 import "../../../styles/header.css";
 
 function MenuIcon() {
@@ -334,7 +334,14 @@ function Header() {
                             </span>
                         )}
                     </NavLink>
-
+<Link
+    to="/wishlist"
+    className="header-wishlist-link"
+    aria-label="View wishlist"
+    title="My Wishlist"
+>
+    ♡
+</Link>
                     {user ? (
                         <div className="user-menu-wrapper">
                             <button

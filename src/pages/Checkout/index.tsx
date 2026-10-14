@@ -5,7 +5,7 @@ import {
 import { useCart } from "../../store/CartContext";
 import "../../styles/checkout.css";
 import { getFinalPrice } from "../../utils/getFinalPrice";
-
+import CartWishlist from "../../components/CartWishlist";
 
 const checkoutCoupons: Record<string, number> = {
     WELCOME10: 10,
@@ -114,8 +114,8 @@ function Checkout() {
 
 
     return (
+    <>
         <section className="checkout-page motion-slide-up">
-
 
             <div className="checkout-form">
 
@@ -449,6 +449,11 @@ function Checkout() {
             </aside>
 
         </section>
+
+        <div className="checkout-wishlist-section">
+            <CartWishlist />
+        </div>
+    </>
     );
 }
 
