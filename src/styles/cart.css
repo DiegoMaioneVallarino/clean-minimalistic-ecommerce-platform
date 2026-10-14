@@ -151,3 +151,23 @@
     font-size: 12px;
     letter-spacing: 0.02em;
 }
+.cart-empty-state {
+    padding: 40px 0 70px;
+    text-align: center;
+}
+
+.cart-empty-state p {
+    color: #888;
+    font-size: 14px;
+}
+
+.cart-empty-state button {
+    margin-top: 18px;
+    padding: 13px 24px;
+    border: 1px solid #111;
+    background: #111;
+    color: white;
+    font-size: 11px;
+    letter-spacing: .1em;
+    cursor: pointer;
+}

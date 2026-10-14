@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 
 import { useProducts } from "../../store/ProductContext";
 import { useCart } from "../../store/CartContext";
+import { useShoppingHistory } from "../../store/ShoppingHistoryContext";
 import { flyToCart } from "../../utils/flyToCart";
 import { getFinalPrice } from "../../utils/getFinalPrice";
 
@@ -19,7 +20,11 @@ function ProductDetail() {
 
     const { products } = useProducts();
     const { addToCart } = useCart();
-
+const {
+    recordView,
+    isWishlisted,
+    toggleWishlist,
+} = useShoppingHistory();
     const product = products.find(
         (item) => item.id === Number(id)
     );
@@ -83,7 +88,11 @@ function ProductDetail() {
             document.body.style.overflow = previousOverflow;
         };
     }, [activeImage, productImages.length]);
-
+useEffect(() => {
+    if (product && product.stock > 0) {
+        recordView(product.id);
+    }
+}, [product?.id, product?.stock, recordView]);
     if (!product) {
         return (
             <section className="product-not-found">
@@ -174,7 +183,26 @@ function ProductDetail() {
                     </div>
 
                     <h1>{product.name}</h1>
+                {!isOutOfStock && (
+                    <button
+                        type="button"
+                        className={
+                            isWishlisted(product.id)
+                                ? "product-wishlist-button active"
+                                : "product-wishlist-button"
+                        }
+                        onClick={() => toggleWishlist(product.id)}
+                        aria-pressed={isWishlisted(product.id)}
+                    >
+                        <span aria-hidden="true">
+                            {isWishlisted(product.id) ? "♥" : "♡"}
+                        </span>
 
+                        {isWishlisted(product.id)
+                            ? "SAVED TO WISHLIST"
+                            : "ADD TO WISHLIST"}
+                    </button>
+                )}
                     <div className="product-price-row">
                         <div className="product-price">
                             {isOnSale ? (

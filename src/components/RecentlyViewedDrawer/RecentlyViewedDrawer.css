@@ -1,0 +1,133 @@
+
+.recently-viewed-trigger {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 17px;
+    border: 1px solid #111;
+    border-radius: 2px;
+
+    background: #111;
+    color: white;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    cursor: pointer;
+}
+
+.recently-viewed-trigger > span:first-child {
+    font-size: 18px;
+}
+
+.recently-viewed-count {
+    display: grid;
+    place-items: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 4px;
+    border-radius: 50%;
+    background: #fff;
+    color: #111;
+    font-size: 10px;
+}
+
+.recently-viewed-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1090;
+    background: rgba(0, 0, 0, .35);
+}
+
+.recently-viewed-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1100;
+
+    display: flex;
+    flex-direction: column;
+
+    width: min(390px, 100%);
+    padding: 28px;
+    box-sizing: border-box;
+
+    background: #fff;
+    box-shadow: -8px 0 35px #00000012;
+}
+
+.recently-viewed-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.recently-viewed-header span {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: .15em;
+}
+
+.recently-viewed-header h2 {
+    margin: 8px 0 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    font-weight: 400;
+}
+
+.recently-viewed-header button {
+    border: 0;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.recently-viewed-clear {
+    align-self: flex-end;
+    margin: 18px 0;
+    border: 0;
+    background: transparent;
+    color: #888;
+    font-size: 10px;
+    letter-spacing: .1em;
+    cursor: pointer;
+}
+
+.recently-viewed-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+    gap: 24px 12px;
+    overflow-y: auto;
+    min-height: 0;
+    padding-bottom: 25px;
+}
+
+.recently-viewed-list > p {
+    grid-column: 1 / -1;
+    color: #888;
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    .recently-viewed-trigger {
+        right: 12px;
+        bottom: 12px;
+        padding: 11px 13px;
+        font-size: 9px;
+    }
+
+    .recently-viewed-panel {
+        padding: 20px;
+    }
+}

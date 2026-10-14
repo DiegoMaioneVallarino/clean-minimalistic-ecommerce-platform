@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import { useCart } from "../../store/CartContext";
 import { getFinalPrice } from "../../utils/getFinalPrice";
-
+import CartWishlist from "../../components/CartWishlist";
+import RecentlyViewedDrawer from "../../components/RecentlyViewedDrawer";
 import "../../styles/cart.css";
 
 function Cart() {
@@ -32,10 +33,25 @@ function Cart() {
         );
     }
 
-    return (
-        <section className="cart-page">
-            <h1>Cart</h1>
+    
+return (
+    <section className="cart-page">
+        <h1>Cart</h1>
 
+        <CartWishlist />
+
+        {items.length === 0 ? (
+            <div className="cart-empty-state">
+                <p>Your cart is empty.</p>
+
+                <button
+                    type="button"
+                    onClick={() => navigate("/catalog")}
+                >
+                    EXPLORE COLLECTION
+                </button>
+            </div>
+        ) : (
             <div className="cart-layout">
                 <div className="cart-items">
                     {items.map((item) => (
@@ -53,10 +69,9 @@ function Cart() {
 
                                 {(item.color || item.size) && (
                                     <p className="cart-item-variant">
-                                        {[
-                                            item.color,
-                                            item.size,
-                                        ].filter(Boolean).join(" / ")}
+                                        {[item.color, item.size]
+                                            .filter(Boolean)
+                                            .join(" / ")}
                                     </p>
                                 )}
 
@@ -65,7 +80,6 @@ function Cart() {
                                         <span className="cart-original-price">
                                             ${item.product.price}
                                         </span>
-
                                         <span className="cart-discounted-price">
                                             ${getFinalPrice(item.product)}
                                         </span>
@@ -130,8 +144,12 @@ function Cart() {
                     </button>
                 </aside>
             </div>
-        </section>
-    );
+        )}
+
+        <RecentlyViewedDrawer />
+    </section>
+);
+
 }
 
 export default Cart;
