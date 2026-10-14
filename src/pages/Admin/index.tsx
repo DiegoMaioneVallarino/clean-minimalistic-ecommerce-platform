@@ -26,15 +26,22 @@ import AdminBlog
 import AdminDiscounts
     from "../../components/AdminDiscounts";
 import AdminCategories from "../../components/AdminCategories";
+import AdminReviews from "../../components/AdminReviews";
+
+
+
 type AdminSection =
     | "summary"
     | "products"
     | "categories"
     | "orders"
     | "customers"
+    | "reviews"
     | "messages"
     | "blog"
     | "discounts";
+
+
 const mockOrders = [
     {
         id: "#1004",
@@ -149,7 +156,17 @@ function Admin() {
                         Customers
                     </button>
 
-
+<button
+    type="button"
+    className={
+        section === "reviews"
+            ? "active"
+            : ""
+    }
+    onClick={() => setSection("reviews")}
+>
+    Reviews
+</button>
                     <button
                         className={
                             section === "messages"
@@ -219,7 +236,9 @@ function Admin() {
                 {section === "customers" && (
                         <AdminCustomers />
                     )}
-
+                    {section === "reviews" && (
+                        <AdminReviews />
+                    )}
 
                     {section === "messages" && (
                         <AdminMessages />
