@@ -25,17 +25,16 @@ import AdminBlog
 
 import AdminDiscounts
     from "../../components/AdminDiscounts";
-
+import AdminCategories from "../../components/AdminCategories";
 type AdminSection =
     | "summary"
     | "products"
+    | "categories"
     | "orders"
     | "customers"
     | "messages"
     | "blog"
     | "discounts";
-
-
 const mockOrders = [
     {
         id: "#1004",
@@ -112,7 +111,17 @@ function Admin() {
                         Products
                     </button>
 
-
+                    <button
+                        type="button"
+                        className={
+                            section === "categories"
+                                ? "active"
+                                : ""
+                        }
+                        onClick={() => setSection("categories")}
+                    >
+                        Categories & Styles
+                    </button>
                     <button
                         className={
                             section === "orders"
@@ -198,7 +207,9 @@ function Admin() {
 
                 )}
 
-
+                {section === "categories" && (
+                    <AdminCategories />
+                )}
                 {section === "orders" && (
 
                     <OrdersAdmin />
