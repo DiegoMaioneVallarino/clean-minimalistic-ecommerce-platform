@@ -89,22 +89,21 @@ function About() {
                     </div>
 
                     <h1>
-                        THE ART OF
+                        GOOD TASTE.
                         <br />
-                        <em>FINDING</em>
+                        <em>RARE FINDS.</em>
                         <br />
-                        SOMETHING
+                        NO
                         <br />
-                        DIFFERENT.
+                        COMPROMISES.
                     </h1>
 
                     <div className="maison-hero-bottom">
                         <p>
-                            A curated vintage destination in the heart of
-                            Mexico City. Clothing, culture, and stories
-                            worth keeping.
+                            An independent vintage house built on years of sourcing,
+                            a discerning eye, and the art of putting things together.
                         </p>
-                        <a href="#maison-story">DISCOVER OUR STORY ↓</a>
+                        <a href="#maison-story">DISCOVER OUR APPROACH ↓</a>
                     </div>
                 </div>
             </section>
@@ -117,26 +116,26 @@ function About() {
 
                 <div className="maison-story-layout">
                     <div className="maison-story-copy">
-                        <span className="maison-overline">NOT JUST CLOTHING.</span>
+                        <span className="maison-overline">ESTABLISHED 2018</span>
                         <h2>
-                            OLD PIECES.
+                            OVER SEVEN YEARS.
                             <br />
-                            <em>NEW STORIES.</em>
+                            <em>ONE DISTINCT EYE.</em>
                         </h2>
                         <p>
-                            Desde 2018, Maison Vintage ha sido un espacio
-                            dedicado a descubrir prendas con carácter,
-                            piezas únicas y nuevas formas de expresión.
+                            Since 2018, Maison Vintage has been dedicated to finding
+                            exceptional pieces and bringing them into a contemporary wardrobe.
                         </p>
                         <p>
-                            En el corazón de la Roma Norte, reunimos
-                            moda vintage, referencias de distintas épocas
-                            y una comunidad que entiende el estilo como
-                            algo personal.
+                            Over seven years in vintage have shaped our understanding
+                            of quality, proportion, design, and the details that make
+                            a piece worth owning.
                         </p>
                         <p>
-                            Porque una prenda puede tener historia,
-                            pero quien la lleva escribe el siguiente capítulo.
+                            Based in Mexico City's Roma Norte, we've built our identity
+                            around independent taste, specialized sourcing, and a
+                            constantly evolving selection. Experience teaches you
+                            where to look. Taste tells you what to keep.
                         </p>
                     </div>
 
@@ -157,17 +156,34 @@ function About() {
             <section className="maison-statement">
                 <span>MAISON PHILOSOPHY / 002</span>
                 <p>
-                    STYLE IS NOT ABOUT
+                    WE DON'T FOLLOW TRENDS.
                     <br />
-                    FOLLOWING TIME.
-                    <br />
-                    <em>IT'S ABOUT MAKING IT YOURS.</em>
+                    <em>WE RECOGNIZE WHAT LASTS.</em>
                 </p>
+            </section>
+
+            <section className="maison-sourcing" id="maison-sourcing">
+                <div className="maison-section-label">
+                    <span>02 / THE CURATION</span>
+                    <span>SOURCING · SELECTION · PERSPECTIVE</span>
+                </div>
+                <div className="maison-sourcing-layout">
+                    <div>
+                        <span className="maison-overline">ACCESS IS ONLY THE BEGINNING</span>
+                        <h2>THE ART OF<br /><em>THE FIND.</em></h2>
+                    </div>
+                    <div className="maison-sourcing-copy">
+                        <p>Great vintage doesn't happen by accident.</p>
+                        <p>Through years of experience and relationships with specialized distributors and independent suppliers, we've developed access to distinctive pieces across different eras, styles, and design movements.</p>
+                        <p>Every piece is considered for its quality, silhouette, character, and potential to become part of something greater.</p>
+                        <p><strong>We believe the difference is not just in what you find, but in what you choose.</strong></p>
+                    </div>
+                </div>
             </section>
 
             <section className="maison-archive" id="maison-archive">
                 <div className="maison-section-label">
-                    <span>02 / THE ARCHIVE</span>
+                    <span>03 / THE ARCHIVE</span>
                     <span>PEOPLE · OBJECTS · MOMENTS</span>
                 </div>
 
@@ -182,7 +198,7 @@ function About() {
                     </div>
                     <p>
                         A visual diary of the people, pieces, and
-                        moments that make Maison what it is.
+                        moments that shape our point of view.
                     </p>
                 </div>
 
@@ -234,16 +250,18 @@ function About() {
                     />
                 </div>
                 <div className="maison-detail-copy">
-                    <span className="maison-overline">03 / THE SELECTION</span>
+                    <span className="maison-overline">04 / THE SELECTION · STYLING</span>
                     <h2>
-                        ONE OF
+                        THE RIGHT PIECES.
                         <br />
-                        <em>A KIND.</em>
+                        <em>THE RIGHT COMBINATION.</em>
                     </h2>
                     <p>
-                        From vintage sportswear to designer pieces,
-                        every discovery brings a different reference,
-                        texture, or era into the present.
+                        A great outfit is more than a collection of great clothes.
+                        It's about proportion, balancing textures, and connecting
+                        references across eras. From vintage sportswear to designer
+                        garments, we select pieces with the potential to create
+                        distinctive looks. Good clothes are found. Great style is composed.
                     </p>
                     <a href="/catalog">EXPLORE THE COLLECTION ↗</a>
                 </div>
@@ -251,17 +269,17 @@ function About() {
 
             <section className="maison-visit">
                 <div className="maison-section-label">
-                    <span>04 / VISIT US</span>
+                    <span>05 / VISIT US</span>
                     <span>ROMA NORTE, MEXICO CITY</span>
                 </div>
 
                 <div className="maison-visit-layout">
                     <div>
-                        <span className="maison-overline">FIND US IN THE CITY</span>
+                        <span className="maison-overline">ROMA NORTE · MEXICO CITY</span>
                         <h2>
-                            COME
+                            COME SEE
                             <br />
-                            <em>THROUGH.</em>
+                            <em>WHAT WE FOUND.</em>
                         </h2>
                     </div>
 
@@ -272,7 +290,7 @@ function About() {
                             <br />
                             Roma Norte
                             <br />
-                            Ciudad de México
+                            Mexico City
                         </address>
 
                         <a
@@ -296,8 +314,8 @@ function About() {
 
             <footer className="maison-footer">
                 <span>MAISON VINTAGE MX</span>
-                <span>ESTABLISHED 2018</span>
-                <span>CDMX, MÉXICO</span>
+                <span>INDEPENDENTLY CURATED SINCE 2018</span>
+                <span>CDMX, MEXICO</span>
             </footer>
 
             {selectedPhoto !== null && visiblePhotos[selectedPhoto] && (

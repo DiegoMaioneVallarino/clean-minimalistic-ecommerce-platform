@@ -1,5 +1,6 @@
 .model-looks {
     padding: 50px 40px;
+    overflow: auto;
 }
 
 .model-looks-grid {
@@ -105,6 +106,6 @@
 
 @media (max-width: 520px) {
     .model-looks-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }

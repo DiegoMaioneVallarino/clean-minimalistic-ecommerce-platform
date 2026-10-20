@@ -8,7 +8,6 @@ import PromoBanner from "../../components/PromoBanner";
 import NewArrivals from "../../components/NewArrivals";
 
 import CatalogShowcase from "../../components/CatalogShowcase";
-import SaleSelection from "../../components/SaleSelection";
 
 import "../../styles/home.css";
 
@@ -25,7 +24,7 @@ function Home() {
 
             <PromoBanner />
 
-            <SaleSelection />
+
 
             <ModelLooks />
 

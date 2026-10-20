@@ -16,7 +16,7 @@ function PromoBanner() {
                         SEASONAL SELECTION
                     </span>
 
-                    <h2>Up to 40% off</h2>
+                    <h2>40% off</h2>
 
                     <span className="promo-banner-cta">
                         EXPLORE SALE

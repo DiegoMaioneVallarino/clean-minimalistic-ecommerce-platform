@@ -37,6 +37,11 @@ const {
     const [activeImage, setActiveImage] =
         useState<number | null>(null);
 
+
+ const [selectedGalleryImage, setSelectedGalleryImage] = useState(0);
+
+
+
     const productImageRef = useRef<HTMLImageElement>(null);
 
     const productImages = product
@@ -143,31 +148,67 @@ useEffect(() => {
     return (
         <>
             <section className="product-detail">
-                <div className="product-gallery">
-                    {productImages.map((image, index) => (
-                        <button
-                            className="product-gallery-item"
-                            key={`${image}-${index}`}
-                            type="button"
-                            onClick={() => setActiveImage(index)}
-                            aria-label={`Enlarge image ${index + 1}`}
-                        >
-                            <img
-                                ref={
-                                    index === 0
-                                        ? productImageRef
-                                        : null
-                                }
-                                src={image}
-                                alt={`${product.name} ${index + 1}`}
-                            />
-
-                            <span className="gallery-zoom-label">
-                                View image +
-                            </span>
-                        </button>
-                    ))}
+                <div className="product-mobile-heading">
+                    
+                    <h1>{product.name}</h1>
+                    <div className="product-price-row">
+                        <div className="product-price">
+                            {isOnSale ? <><span className="product-original-price">${product.price}</span><span className="product-discounted-price">${finalPrice}</span></> : <span>${product.price}</span>}
+                            <span className="product-currency">MXN</span>
+                        </div>
+                        {isOnSale && <span className="product-discount-percent">-{product.discount}%</span>}
+                    </div>
                 </div>
+                <div className="product-gallery">
+    {/* Imagen principal */}
+    {productImages.length > 0 && (
+        <button
+            className="product-gallery-main"
+            type="button"
+            onClick={() => setActiveImage(selectedGalleryImage)}
+            aria-label="Enlarge main product image"
+        >
+            <img
+                ref={productImageRef}
+                src={productImages[selectedGalleryImage]}
+                alt={`${product.name} ${selectedGalleryImage + 1}`}
+            />
+
+            <span className="gallery-zoom-label">
+                View image +
+            </span>
+        </button>
+    )}
+
+    {/* Miniaturas cuadradas */}
+    {productImages.length > 1 && (
+        <div
+            className="product-gallery-thumbnails"
+            role="group"
+            aria-label="Choose product image"
+        >
+            {productImages.map((image, index) => (
+                <button
+                    className={
+                        selectedGalleryImage === index
+                            ? "product-gallery-thumbnail selected"
+                            : "product-gallery-thumbnail"
+                    }
+                    key={`${image}-${index}`}
+                    type="button"
+                    onClick={() => setSelectedGalleryImage(index)}
+                    aria-label={`Show image ${index + 1}`}
+                    aria-pressed={selectedGalleryImage === index}
+                >
+                    <img
+                        src={image}
+                        alt={`${product.name} thumbnail ${index + 1}`}
+                    />
+                </button>
+            ))}
+        </div>
+    )}
+</div>
 
                 <div className="product-info">
                     <div className="product-breadcrumb">
@@ -252,12 +293,6 @@ useEffect(() => {
                         )}
                     </div>
 
-                    {product.description && (
-                        <p className="product-description">
-                            {product.description}
-                        </p>
-                    )}
-
                     {product.colors && product.colors.length > 0 && (
                         <div className="product-option-group">
                             <div className="product-option-heading">
@@ -337,6 +372,12 @@ useEffect(() => {
                                 ? "Select a size"
                                 : "Add to cart"}
                     </button>
+
+                    {product.description && (
+                        <p className="product-description">
+                            {product.description}
+                        </p>
+                    )}
 
                     <p className="product-purchase-note">
                         Curated pieces. Limited availability.
